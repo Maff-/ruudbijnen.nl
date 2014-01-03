@@ -1,0 +1,23 @@
+/* 'TEAM' */
+Site: http://ruudbijnen.nl/
+Designer: Ruud Bijnen
+Developer: Ruud Bijnen
+Hacker: Ruud Bijnen
+Location: The Netherlands
+
+
+/* THANKS */
+DocPad Developers
+Twitter Bootstrap Team
+Pip & Mo'
+
+/* SITE */
+Last update: Ain't Nobody Got Time For That
+Standards: HTML5, CSS3, SVG
+Components: DocPad, Bootstrap
+Software: Illustrator, Photoshop, PhpStorm
+
+
+/* NOTE */
+humans.txt is an initiative for knowing the people behind a website.
+It's a TXT file that contains information about the different people who have contributed to building the website.

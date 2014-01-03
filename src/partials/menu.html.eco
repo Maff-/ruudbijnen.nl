@@ -1,0 +1,35 @@
+<!-- Main Menu -->
+<% testMenuItems = { bsComponents:  {title: 'Compontents', url: '/test/bs-components'}, bsCss:  {title: 'CSS', url: '/test/bs-css'}, bsJs:  {title: 'Javascript', url: '/test/bs-js'} } %>
+<nav id="nav-main" role="navigation">
+	<div class="navbar navbar-default container">
+		<button type="button" class="navbar-toggle" data-toggle="class"
+				data-target="#nav-main-items .navbar-nav" data-value="collapsed">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<div id="nav-main-items">
+			<ul class="nav navbar-nav">
+				<% for itemIndex of @menuItems: %>
+					<% item = @menuItems[itemIndex] %>
+					<li class="nav-item-<%= itemIndex %><%= ' active' if @document.url == item.url or @document.menuIndex == itemIndex %>"><a href="<%= item.url %>"><%= item.title %></a></li>
+				<% end %>
+				<% if 'development' in @getEnvironments():%>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">TwBs Tests <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<% for itemIndex of testMenuItems: %>
+							<% item = testMenuItems[itemIndex] %>
+							<li class="nav-item-<%= itemIndex %><%= ' active' if @document.url == item.url or @document.menuIndex == itemIndex %>"><a href="<%= item.url %>"><%= item.title %></a></li>
+						<% end %>
+					</ul>
+				</li>
+				<% end %>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="search-nav-item"><a href="#search" id="search-nav-link">Search</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>

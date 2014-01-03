@@ -1,0 +1,21 @@
+<% if @related?.length: %>
+<aside class="related">
+	<div class="container">
+		<header>
+			<h3>Related documents</h3>
+		</header>
+		<ul class="related-documents list-documents">
+			<% for document in @related: %>
+				<li class="list-documents-item <%= document.type %>">
+					<span class="badge document-type"><%= document.type %></span>
+					<a href="<%= document.url %>" class="full-article"><%= document.title %></a>
+					<% if document.tags: %><span class="tags">
+						<% n = 0 %>
+						<% for tag in document.tags: %><%= ', ' if n++ != 0 %><%- if tag in @document.tags then "<em>#{tag}</em>" else tag %><% end %>
+					</span><% end %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</aside>
+<% end %>

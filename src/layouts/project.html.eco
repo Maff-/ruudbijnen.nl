@@ -1,0 +1,32 @@
+---
+layout: default
+menuIndex: projects
+render: false
+write: false
+---
+<article class="project has-nav">
+	<div class="container">
+		<header>
+			<h1><%= @document.title or "*WHELP I don't have a title" %></h1>
+			<small class="project-meta meta">
+				<dl>
+					<dt>Last updated:</dt><dd><%= @formatDate(@document.date, 'LL') %></dd>
+					<dt>Tags:</dt><dd><%= @document.tags.join(', ') if @document.tags %></dd>
+				</dl>
+			</small>
+		</header>
+		<section class="project-content">
+			<%- @content %>
+		</section>
+	</div>
+
+	<%- @partial('document-gallery.html.jade', {self: @, document: @document }) %>
+
+	<nav class="nav-article">
+		<div class="container">
+			<a href="/projects" title="Projects overview">Back to the projects overview</a>
+		</div>
+	</nav>
+
+</article>
+<%- @partial('related-documents.html.eco', false, {related: @getRelatedDocuments(), document: @document}) %>

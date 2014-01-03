@@ -1,0 +1,21 @@
+{
+  "name": "docpad-plugin-swiftypemeta",
+  "version": "2.0.0",
+  "description": "Docpad plugin adds Swiftype-specific Meta Tags to the rendered HTML output",
+  "keywords": [
+    "docpad",
+    "docpad-plugin",
+    "swiftype",
+    "meta"
+  ],
+  "author": {
+    "name": "Ruud Bijnen",
+    "email": "r.bijnen@gmail.com",
+    "url": "http://ruudbijnen.nl/"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "./src/swiftypemeta.plugin.coffee",
+  "license": "MIT"
+}

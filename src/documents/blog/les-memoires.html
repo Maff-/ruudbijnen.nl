@@ -1,0 +1,54 @@
+---
+title: Les Mémoires – Memories of past time
+date: 2011-02-13 02:00:43
+tags: [Les Mémoires, openFrameworks, Write-Up]
+categories: [Old Content]
+oldContent: true
+spotlight: true
+---
+<p>It's been some time since I and fellow students finished the concept stage of the Les Mémoires project, but in the mean time we have been working on realizing the concept and building the installation for real. A great opportunity as lots of these sorts of projects never sees the light of day. Because realization is near, I would like to tell the world a little more about the background story.<!--more-->
+<h2>A concept evolved over time</h2>
+For this project we were asked to develop an installation for the new building of our university. The only restriction we had was that it should serve as a clock, so students, tutors and visitors could tell the time.
+I took the job of project manager on me, and together with my team we came up with the Les Mémoires installation. Our goal was to make an installation that was more than just a clock; it should invoke people to stand still at the passing of time, while being entertaining and memorable.</p>
+<p>Inspired by one the buildings features, walls covert with vertical wooden beams, we thought of a video installation that would slice up an image and freeze each slice as seconds passed by. The group agreed this was an idea worth exploring, so our Motion Graphics guy whipped up a quick experiment. The results were very promising, and it was decided we needed early software to test the effect on all sorts of video material, including live feeds. As I was the most appropriate person to write this, I took the role of software engineer alongside of being project manager.
+By applying the RERO (Release early, release often) development philosophy I was able to get the results we wanted fast. This allowed us to test the installation on site in an early stage, which led to new insights and time to tweak.</p>
+<p>[vimeo 19844832 658 362]</p>
+<p>As you can see in the embed video above we also experimented with a controversial setup; the screen is rotated 90°, resulting in a portrait orientated image. This was found to be more interesting for its users, as it breaks the association with the boring narrowcasting and other miscellaneous screens than hang around in the university's building.
+The test also confirmed our suspicion that placing the installation in the main hallway, next to its four elevators, would be great idea. It's a place where most of people pass by every day, a place where a clock would make most sense, but also a place where people have to just stand and wait. That is; until now! With an interactive installation like Les Mémoires people get the opportunity to enjoy their time 'waiting' on the elevator, and leave their mark in history at the same time.
+<h2>From concept to video installation and beyond</h2>
+As mentioned before, we desired our installation to be more than just a clock; it should also provide a way to leave a mark in time, for others to be seen, and remembered by. You could say the installation isn't about telling time; instead it's about the passage of time. Because, how hard we try, we won't be able to undo the past. Also, a funny thing about time is the way it fades our memories, as none will last forever. These aspects of time and memories are something we wanted to include in the installation as well.</p>
+<p>To achieve these goals we ended up with a video installation which consists of a camera, a large screen and a pc with internet access.
+The camera records images of the people standing in front of the screen, the images are then processed into memories of time (explained below) and displayed on the screen. It takes a whole minute to fill the screen with the processed image, after which its represents a memory of that pasted minute and is uploaded to a Flickr account. These memories can then be retrieved through a special website.</p>
+<p><a href="http://www.ruudbijnen.nl/wp-content/uploads/2011/02/lesmemoires_systemoverview.png"><img class="aligncenter size-full wp-image-213" title="Les Mémoires - System Overview" src="http://www.ruudbijnen.nl/wp-content/uploads/2011/02/lesmemoires_systemoverview.png" alt="A illustration of the system overview of the Les Mémoires installation" width="650" height="403" /></a>
+<h2>Slicing time – from life image to memory</h2>
+So to get from a life feed to unique memories of time could be achieved in a countless ways, this is how we did it:</p>
+<p>Every exact second a capture gets taken from the life feed. From this capture a slice (1/60<sup>th</sup> of the full height of the image) is taken, and displayed frozen on the screen, partly blocking the view of the life feed underneath. This process is repeated every second and slowly filling the screen with frozen slices.
+As time passes memories fade, this is exactly what is happening in our program as well. The frozen slices are not only a representation of a particular passed second, it also contains information of the previous passed seconds.</p>
+<p><a href="http://www.ruudbijnen.nl/wp-content/uploads/2011/02/lesmemoires_timesliceeffect.png"><img class="aligncenter size-full wp-image-214" title="Les Mémoires - Time Slice Effect" src="http://www.ruudbijnen.nl/wp-content/uploads/2011/02/lesmemoires_timesliceeffect.png" alt="A illustration of the time slice effect of the Les Mémoires installation" width="655" height="820" /></a></p>
+<p>After a minute is passed the screen resets; an animated 'wipe' sweeps the memories away and a fresh minute starts.</p>
+<p>In order for the installation to act as a clock as well, we tried different ways of displaying the time on screen, ranging from very abstract to plain simple digital notation. Tests with the target audience (unfortunately) showed that using a somewhat abstract form was not suitable, and we ended up with overlaying the last frozen slice with the digital notation. This moves every second to the next frozen slice, emphasizing the 'ticking' of time.</p>
+<p><h2>Saving those precious memories</h2>
+Part of the concept we presented was a website that would allow the users to review the memories they were part of. In order to achieve this we needed to distribute the images to the web, we didn't want to serve them directly from our machine, as this could lead to security and reliance issues.
+Because we have a lot of images we want to upload every day (one every minute) we looked at hosting them separate from our website. Flickr was chosen as the most suitable candidate, although a Pro account would be needed due to the amount of images, it has a rich API and lots of readymade libraries/classes to get images quick and easy from and to their site.</p>
+<p>Unfortunately no Flickr add-on or easy to integrate C++ lib was available for OpenFrameworks, so I decided to whip up a PHP daemon that handled the parsing and uploading of memories. This approach has a fair share of advantages; it is easy and quickly to develop (by using phpFlickr), it is easier to maintain (for example if the API changes) also by other people without C++ knowledge, and if something in the upload process goes wrong the main program just keeps running. The fact that this approach is harder to deploy (not just running one executable) could be seen as a disadvantage.</p>
+<p>On the other end of the system, the website users can visit, is a rich AJAX based website driven with <a href="http://jquery.com/">JQuery</a> and a Flickr JavaScript helper.
+For the first iterations of this website design I developed the interaction design. Later this served as a base for a new team member responsible for the graphic design.
+<h2>Some technical details</h2>
+<ul>
+	<li>Custom software written in <a href="http://openframeworks.cc/">openFrameworks</a>, with used addons including ofxOpenCv, ofxThreadedImageSaver, ofxArgs and ofxXmlSettings</li>
+	<li>PC with AMD Athlon II X2 250 processor, 4GB memory and ATI Radeon HD5670 video card</li>
+	<li>Microsoft LifeCam Cinema HD</li>
+	<li>Samsung UE46C5100 (46" Full HD LED TV)</li>
+	<li>Running on a tweaked Microsoft Windows XP setup with <a href="http://www.coretechnologies.com/products/AlwaysUp/">AlwaysUp</a></li>
+</ul>
+<h2>My involvement – a recap, and some forgotten stuff</h2>
+<ul>
+	<li>Project managing</li>
+	<li>Software engineering (OpenFrameworks app, PHP Upload Daemon)</li>
+	<li>Researched needed hardware</li>
+	<li>System configuration and tweaking</li>
+	<li>First iterations website interaction design</li>
+	<li>Design one-pager</li>
+</ul>
+There is also an <a href="/projects/les-memoires/">entry in my portfolio about this project</a>.</p>
+

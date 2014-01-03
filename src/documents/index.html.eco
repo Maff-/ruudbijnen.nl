@@ -1,0 +1,86 @@
+---
+layout: default
+url: /
+urls: [/, /home]
+priority: 0.8
+---
+
+<article class="accent-magenta welcome">
+	<div class="container">
+		<header>
+			<h1>Hi, I'm Ruud</h1>
+			<h3>Freelance Web/Creative Developer</h3>
+		</header>
+	</div>
+</article>
+
+<% projects = @getCollection("projects").findAll({spotlight: true}, [date:1]).toJSON() %>
+<% if projects.length > 0: %>
+<article class="projects-spotlight carousel-container has-nav">
+	<div class="container">
+		<div id="projects-spotlight-carousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<% for project, i in projects: %>
+					<li data-target="#projects-spotlight-carousel" data-slide-to="<%- i %>"<%- ' class="active"' if i == 0 %>></li>
+				<% end %>
+			</ol>
+		
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<% for project, i in projects: %>
+				<div class="item<%= ' active' if i == 0 %>">
+					<img src="<%= @getThumbnail(project.backdropImage, 'carousel').replace('\\', '/') %>" alt="<%= project.title or project.url %>">
+					<div class="carousel-caption inherted-links">
+						<h3><a href="<%= project.url %>" title="<%= project.title %>"><%= project.title %></a></h3>
+						<p><%= project.tags.join ', ' %></p>
+					</div>
+				</div>
+				<% end %>
+			</div>
+		
+			<!-- Controls -->
+			<a class="left carousel-control" href="#projects-spotlight-carousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#projects-spotlight-carousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div>
+
+	<nav class="nav-article">
+		<div class="container">
+			<a href="/projects" class="full-article">All the projects</a>
+		</div>
+	</nav>
+</article>
+<% end %>
+
+<% blogPosts = @getCollection("blogPosts").findAll($or: {spotlight: true, oldContent: $ne: true}).toJSON() %>
+<% blogPosts = blogPosts[0..5] %>
+<% if blogPosts.length > 0: %>
+<article class="blog-spotlight has-nav">
+	<div class="container">
+		<header>
+			<h2>From the Blog</h2>
+		</header>
+		<section class="content">
+			<ul class="blog-posts">
+			<% for post in blogPosts: %>
+				<li>
+					<% if post.spotlight: %><span class="badge badge-highlight">highlight</span><% end %>
+					<a href="<%= post.url %>" class="full-article" title="<%= post.title %>"><%= post.title %></a>
+				</li>
+			<% end %>
+			</ul>
+		</section>
+	</div>
+
+	<nav class="nav-article">
+		<div class="container">
+			<a href="/blog" class="full-article">More from the blog</a>
+		</div>
+	</nav>
+</article>
+<% end %>

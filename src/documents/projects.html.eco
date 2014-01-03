@@ -1,0 +1,48 @@
+---
+title: Projects I've Been Working On
+layout: default
+url: /projects/
+urls: [/projects, /projects/, /portfolio/]
+skipCollection: true
+priority: 1.0
+---
+<section class="page-lead blog-index-intro">
+	<div class="container">
+		<header>
+			<h1><%= @document.title %></h1>
+		</header>
+		<p class="lead">
+			This is a selection of the projects I've been working on in the past.
+		</p>
+	</div>
+</section>
+<% for project in @getCollection("projects").findAll().toJSON(): %>
+<article class="project backdrop index-item has-nav" style="background-image: url('<%= @getThumbnail(project.backdropImage, 'backdrop').replace('\\', '/') %>');">
+	<div class="container">
+		<header>
+			<h2 class="project-title"><a href="<%= project.url %>"><%= project.title or project.url %></a></h2>
+			<small class="project-meta meta">
+				<dl>
+					<% if project.tags: %><dt>Tags:</dt><dd><%= project.tags.join ', ' %></dd><% end %>
+					<!--<dt>updated:</dt><dd><%= @formatDate(project.date, 'MM-DD-YYYY') %></dd>-->
+				</dl>
+			</small>
+		</header>
+        <!--
+		<section class="project-content">
+			...
+		</section>
+		-->
+	</div>
+  <!--
+	<nav class="nav-article">
+		<div class="container">
+			<ul>
+				<li class="left"><a href="<%= project.url %>" class="full-article">'<%= project.title or project.url %>' in full</a></li>
+				<li class="right"><a href="#top" rel="top">Back to Top</a></li>
+			</ul>
+		</div>
+	</nav>
+	-->
+</article>
+<% end %>

@@ -1,0 +1,29 @@
+---
+title: Textures and OpenGL blending modes
+date: 2010-09-07 22:09:36
+tags: [openFrameworks, cinder, particles]
+categories: [Old Content, Verdiepingsopdracht 2]
+oldContent: true
+---
+<p>Although <a href="http://openframeworks.cc/">openFrameworks</a> includes example programs on how the ofImage and ofTexture classes can be used, it doesn't really show you how to use it in a cool way, it's just the basics. Imho this is a great loss, look how <a title="Cinder C++ Library" href="http://libcinder.org/">Cinder</a> does this! It's awesome, it includes a wide range of examples, some as simple as the ones that come with OF, but also the code to some very cool, creative apps. (like <a href="http://vimeo.com/5454686">Earthquake</a>, <a href="http://vimeo.com/5637328">HodginParticlesRedux</a>, Wisteria).</p>
+<p>Anyway, I wanted to learn more about using textures and blending in OF, so I started searching about this topic in the <a href="http://www.openframeworks.cc/forum/">forums</a> and came across the '<a title="Webcam Piano 2 -- Graphics behind it?" href="http://www.openframeworks.cc/forum/viewtopic.php?f=23&amp;t=4436">Webcam Piano 2 -- Graphics behind it?</a>' topic. In which <a title="Mehmet S. Akten (aka Memo) personal website" href="http://www.memo.tv/">Memo</a> explains about some aspects of his stunning <a title="Webcam Piano 2.0 by Memo" href="http://www.msavisuals.com/webcam_piano_2">Webcam Piano 2.0</a> (video below).</p>
+<p>[vimeo 13938077 580 435]</p>
+<p>Creating the colorful bubbles turns out to be surprisingly easy. The image of a grayscale bubble/circle is loaded and used as a texture. But before drawing the texture to screen a glBlendFunc is used.
+<pre>void testApp::setup() {
+  img.loadImage("circle.png"); // load a grayscale image
+}
+void testApp::draw() {
+  glEnable(GL_BLEND); // enable GL blending
+  glBlendFunc(GL_ONE, GL_ONE);
+  ofSetColor(0xFF0000); // set color to red
+  img.draw(0, 0); // upper left corner
+  glDisable(GL_BLEND);
+}</pre>
+A simple piece of code like this would display a red circle.</p>
+<p>I used this technique together with some code to create a gradient/rainbow effect. Which resulted in the first, and simple test program:
+<a title="coloredTexturesTest01 by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/ruudbijnen/4969154498/"><img src="http://farm5.static.flickr.com/4149/4969154498_dccc336805.jpg" alt="coloredTexturesTest01" width="500" height="375" /></a></p>
+<p>Download the <a title="coloredTexturesTest01-bin.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/coloredTexturesTest01-bin.zip">win32 binaries</a> or <a title="coloredTexturesTest01-src.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/coloredTexturesTest01-src.zip">source code</a>. The 'rainbow code' is an adaptation of this excellent article '<a title="Tutorial: Making annoying rainbows in javascript" href="http://www.krazydad.com/makecolors.php">Making annoying rainbows in javascript</a>'.</p>
+<p>After this boring test program I tried to combine this technique with the previous created particle emitter. Each particle has it's own color, and a pointer to the texture. (so only 1 texture is used for all particles)
+[vimeo 14771199 580 326]</p>
+<p>Once again there's <a title="texturedParticles01-bin.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/texturedParticles01-bin.zip">an executable</a> and <a title="texturedParticles01-src.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/texturedParticles01-src.zip">source code</a> available.</p>
+

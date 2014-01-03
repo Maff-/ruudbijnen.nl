@@ -1,0 +1,10 @@
+.idea/
+node_modules/
+bower_components/
+out/
+plugins/*/out
+
+.docpad.db
+/*.log
+
+!.gitignore

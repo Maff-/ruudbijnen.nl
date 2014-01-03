@@ -1,0 +1,16 @@
+- images = images || self.getDocument().getAssociatedFiles().findAll({contentType: {$beginsWith: 'image'}, name: /^[^_]/ }).toJSON();
+- images = images || {}
+
+if Object.keys(images).length > 0
+	section.images
+		.container
+			header
+				h3 Gallery
+			.gallery-list.row
+				each image in images
+					.col-xs-6.col-sm-4.col-md-2
+						a.thumbnail(href=image.url)
+							img(src=self.getThumbnail(image.url, 'zoomcrop', {w:460, h:360, q:100}))
+
+			if self.document.galleryNotes
+				.gallery-notes= self.document.galleryNotes

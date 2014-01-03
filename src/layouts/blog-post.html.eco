@@ -1,0 +1,38 @@
+---
+layout: default
+menuIndex: blog
+render: false
+write: false
+---
+<article class="post">
+	<div class="container">
+		<header>
+			<h1><%= @document.title or "*WHELP I don't have a title" %></h1>
+			<small class="blog-post-meta meta">
+				<dl>
+					<dt>Posted:</dt><dd><%= @formatDate(@document.date, 'LL') %></dd>
+					<dt>Tags:</dt><dd><%= @document.tags.join(', ') if @document.tags %></dd>
+				</dl>
+			</small>
+		</header>
+		<% if @document.oldContent: %>
+		<div class="alert alert-danger">
+			<strong>Hold on there!</strong>
+			This blog article is taken from my previous website and quite old.
+			It may be not as interesting or relevant as it used to be, a lot of information may be deprecated.
+		</div>
+		<% end %>
+		<section class="blog-content">
+			<%- @content %>
+		</section>
+	</div>
+
+	<%- @partial('document-gallery.html.jade', {self: @, document: @document }) %>
+
+	<nav class="nav-article">
+		<div class="container">
+			<%- @getNavLinks() %>
+		</div>
+	</nav>
+</article>
+<%- @partial('related-documents.html.eco', false, {related: @getRelatedDocuments(), document: @document}) %>

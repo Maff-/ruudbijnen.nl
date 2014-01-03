@@ -1,0 +1,47 @@
+//
+// Navbars
+// --------------------------------------------------
+.navbar {
+  border: none;
+}
+
+// Navbar nav links
+// -------------------------
+
+.navbar-nav {
+  > .active > a {
+    border-bottom: 1px solid @brand-gray-dark;
+    margin-bottom: 0; // to prevent hover twitching because of border-bottom
+  }
+  > li > a {
+    border-width: 1px;
+    border-color: transparent;
+    padding-left: @padding-logo-horizontal *2;
+    padding-right: @padding-logo-horizontal *2;
+    margin-bottom: 1px; // to prevent hover twitching because of border-bottom
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid @brand-magenta;
+      margin-bottom: 0; // to prevent hover twitching because of border-bottom
+    }
+  }
+
+  > li {
+    display: none;
+    margin-right: (@padding-logo-horizontal * 2) + 44px; // 44px = width .navbar-toggle
+    @media (min-width: @grid-float-breakpoint) {
+      display: block;
+      margin-right: 0;
+    }
+  }
+
+  > .active,
+  &.collapsed > li {
+    display: block;
+  }
+}
+
+.navbar-toggle {
+  margin-right: @padding-logo-horizontal;
+  margin-top: 12px;
+}

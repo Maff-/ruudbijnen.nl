@@ -1,0 +1,33 @@
+---
+title: Blending Textures in an OpenGL Shader
+date: 2010-09-15 12:13:47
+tags: [openFrameworks, opengl, glsl, shaders, ofxshader, ofxcontrolpanel]
+categories: [Old Content, Verdiepingsopdracht 2]
+oldContent: true
+---
+<p>For my assignment I wanted to get more familiar with the use of OpenGL shaders and the used language (GLSL). I started by searching the <a href="http://www.openframeworks.cc/forum/">openFrameworks forums</a>, and found that the <a href="http://www.lighthouse3d.com/opengl/glsl/">GLSL tutorial</a> over at Lighthouse3D was much appreciated. Also the <a href="http://www.openframeworks.cc/forum/viewtopic.php?f=9&amp;t=2729">ofxShader examples</a> topic is a must read, but you need to do some puzzling in order to get things working with the latest version of OF.</p>
+<p>Going trough different tutorials on the web isn't as easy as you might think, OpenGL has been around for quite some time, and has evolved over the years, rendering some tutorials seriously out of date. An other difficulty I found is there are different ways to achieve the same goal, without it being clear if something is depreciated, or bad practice. Using openFrameworks is great, it takes a lot of the hard work away, but this has the downside that it's user may not know what's happening behind the scenes, which in my case has caused a lot of trouble and confusion when trying out these shader techniques. (Luckily you can browse the source and learn a lot from that, but still it can be a head scratcher some times).</p>
+<p>After getting the examples running from the above mentioned forum thread I tried to create a simple program and shader from scratch, I left the FBO (Frame Buffer Object) out of it to simplify things.  The program would allow you to change the brightness and contrast of a load image by using a (fragment) shader.</p>
+<p><a title="shaderTest02b by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/ruudbijnen/4992917760/"><img src="http://farm5.static.flickr.com/4146/4992917760_a379294994.jpg" alt="shaderTest02b" width="500" height="253" /></a></p>
+<p>Downloads: <a href="http://lab.ruudbijnen.nl/~ruud/BlogContent/shaderTest02b-src.zip">source code</a> (code::blocks), <a href="http://lab.ruudbijnen.nl/~ruud/BlogContent/shaderTest02b-bin.zip">binaries</a> (win32)</p>
+<p>For this program and the next one I've used the most up to date version of ofxShader that I could find. It's located at <a href="http://code.google.com/p/kyle/">Kyle McDonald's Google Code page</a>: <a href="http://code.google.com/p/kyle/source/browse/trunk/openframeworks/addons/ofxShader/">http://code.google.com/p/kyle/source/browse/trunk/openframeworks/addons/ofxShader/</a> (At the time of this writing the latest version is from revision 81, Aug 08, 2010).</p>
+<p>This version is a bit different from the one used in the examples by Theo Watson, mainly being the following:
+[cpp light="true"]// loading the shader, usually done in app::setup()
+ofxShader::loadShader() -&gt; ofxShader::setup()
+// enabling the shader, usually done in app::draw()
+ofxShader::setShaderActive(true) -&gt; ofxShader::begin()
+// setting an uniform, to set a shader parameter, usually done in app::draw()
+ofxShader::setUniformVariable*type*() -&gt; ofxShader::setUniform(*type*)
+// disabling the shader, usually done in app::draw()
+ofxShader::setShaderActive(false) -&gt; ofxShader::end()[/cpp]
+This version by <a href="http://kylemcdonald.net/">Kyle McDonald</a> also includes an easy way (ofxShader::setTexture()) to bind an image or texture to the shader. This gets me to my second program.</p>
+<p>In <a href="http://www.openframeworks.cc/forum/viewtopic.php?f=8&amp;t=3400&amp;hilit=blend">this topic</a> someone suggests to use a GLSL shader to blend textures like done in Adobe Photoshop. Romain Dura has created a glsl file containing a lot of blend modes used in Photoshop which you can find in <a href="http://blog.mouaif.org/?p=94">his blog post</a>, I tried to combine theses thing together. After quite some struggling (see rant at the start of this post) I've managed  to get things working which I turned into a app.</p>
+<p>This was also a nice opportunity to try out the <a href="http://github.com/ofTheo/ofxControlPanel/">ofxControlPanel</a> GUI add-on by <a href="http://www.theowatson.com/">Theo Watson</a>, which is a nice alternative for <a href="http://www.memo.tv/">Memo</a>'s <a href="http://github.com/memo/msalibs/tree/master/ofxSimpleGuiToo/">ofxSimpleGuiToo</a>.</p>
+<p><a title="ShaderTextureBlendingGui by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/ruudbijnen/4992392971/"><img src="http://farm5.static.flickr.com/4083/4992392971_93f1a19ca5_z.jpg" alt="ShaderTextureBlendingGui" width="580" height="480" /></a>
+<a title="ShaderTextureBlendingResult by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/ruudbijnen/4992397497/"></a></p>
+<p>In the control panel you can set a (different) Base or Blend image by double-clicking on a file listed in the appropriate file lister just below the preview. In the right column of the control panel you find sliders and a dropdown list that will allow you to change the shader parameters. The contrast and brightness is applied after blending the Base and Blend image. The Blend Mix parameter allows you to dim the effect of the blending where a 0.0 value represents the original Base image and 1.0 value the blended Base + Blend image.</p>
+<p>The result of above settings is displayed here below.</p>
+<p>Downloads: <a href="http://lab.ruudbijnen.nl/~ruud/BlogContent/ShaderTextureBlending-src.zip">source code</a> (code::blocks), <a href="http://lab.ruudbijnen.nl/~ruud/BlogContent/ShaderTextureBlending-bin.zip">binaries</a> (win32)</p>
+<p><a title="ShaderTextureBlendingResult by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/ruudbijnen/4992397497/"><img src="http://farm5.static.flickr.com/4092/4992397497_14dbdb4695_z.jpg" alt="ShaderTextureBlendingResult" width="512" height="512" /></a></p>
+<p>[miniflickr photoset_id="72157624960878548"]</p>
+

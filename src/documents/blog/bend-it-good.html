@@ -1,0 +1,34 @@
+---
+title: Bend it Good!
+date: 2010-09-06 16:18:42
+tags: [Bend it Good, openFrameworks, Written Images, Cairo]
+categories: [Old Content, Uncategorized]
+oldContent: true
+---
+<p>Almost two months have already passed since I've sent my contribution to the <a title="WrittenImages" href="http://writtenimages.net/" target="_blank">WrittenImages project</a>. Finally I've find some time blog about this great project, and my contribution.</p>
+<p><img class="aligncenter" title="Bend-it-Good Final Example" src="http://farm5.static.flickr.com/4084/4963186109_a4a2003e0f.jpg" alt="" width="500" height="333" /></p>
+<p>WrittenImages is a project of whereby designers/artists/coders can submit there image generating program that will be used to create a truly unique book about generative art. Each time a book is printed, the selected programs will output a new version of the used images.</p>
+<p>For my contribution I wanted to create a program that could generate a bunch of 'tiles' that all would align perfectly on all sides. These square tiles would have a couple of fixed points along each of the four sides where 'lines' could be connected. So, as long as these lines would stay within this tile, and would connect to the same point as the neighboring tile, there should be clean, pixel perfect, image.</p>
+<p>This image shows what I had in mind: (it's created in Adobe Illustrator)
+<a title="Bend it Good idea by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4963446195/"><img src="http://farm5.static.flickr.com/4113/4963446195_8f4ff1f1bf.jpg" alt="Bend it Good idea" width="500" height="336" /></a></p>
+<p>I started to experiment with some code, and I came up with this first test. Every tile has a single (straight) line, which is connected to two (but not the same) 'endpoints', also every tile lines up with its neighbors. You can see the numbered tiles, these numbers indicate the order in which they were generated.
+<a title="Bend-it-Good Work in Progress 01 by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4964036048/"><img src="http://farm5.static.flickr.com/4090/4964036048_7cc21133d2.jpg" alt="Bend-it-Good Work in Progress 01" width="500" height="385" /></a></p>
+<p>After that I started working on using multiple lines per tile, this wan't to hard.</p>
+<p>Next I created the code that 'bended' these lines, so they would be right-angled to all sides, this would insure a consistent look, and side matching tiles.
+<a title="Bend-it-Good Work in Progress 02 by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4964035988/"><img src="http://farm5.static.flickr.com/4089/4964035988_9d36b62a44.jpg" alt="Bend-it-Good Work in Progress 02" width="500" height="385" /></a></p>
+<p>Now I tried creating some high resolution images, as these are required for print, by using the <a title="WrittenImages OpenFrameworks C++ Code" href="http://writtenimages.net/code/source.zip">template code</a> prepared by WrittenImages. This turned out to be awfull! It's based around the ofxTileSaver addon, which didn't render the images properly! The smooth lines got cut off at the edge of the render tiles (not to be confused with the 'tiles' I was talking about before). So I started looking for an alternative and found <a title="Cairo is a 2D graphics library with support for multiple=">Cairo</a> (and ofxCairo, which you find at<a href="http://code.google.com/p/vanderlin/" target="_blank"> Todd Vanderlin's Google Code page</a>) to be very useful.</p>
+<p>To my own opinion the work was coming along pretty well, but it still missed something. I tried different colors, but ended up with Flickr like color set (Magenta, Cyan White and Black). To give the lines on the tiles a little more depth I added a soft glow/gradient on the background:
+<a title="Bend-it-Good Work in Progress 06 by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4964111390/"><img src="http://farm5.static.flickr.com/4095/4964111390_24afc55ab6.jpg" alt="Bend-it-Good Work in Progress 06" width="500" height="500" /></a></p>
+<p>I liked it much better already, but I thought it still could use some spice, so I experimented in Photoshop, and came up with a mosaic like effect that I could implement in the code.
+<a title="Bend-it-Good Work in Progress Mozaic Test by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4964333550/"><img src="http://farm5.static.flickr.com/4091/4964333550_9a84094c67.jpg" alt="Bend-it-Good Work in Progress Mozaic Test" width="400" height="400" /></a></p>
+<p>For the final version of the program I randomized some parameters, so each image would be unique, but also to similar to next one. For instance the tile size won't be always the same size, there a a couple of sizes, of which some will be chosen more often that an other. Also 'layer' order will be different, sometimes the cyan colored path will be on top, sometimes it will be magenta.
+There's also another parameter that controls the likeliness of the endpoints of different (colored) lines overlapping, this effects the overall look and feel of the images. (How chaotic the image will look).</p>
+<p>You may <a title="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/wi-RuudBijnen-BendItGood-v1.zip" href="http://">download the Win32 executable</a> if you like.
+Like any other submission to the WrittenImages project the program must be run with the full path (and filename) of a desired image as parameter. You can supply multiple paths as paramaters in order to create multiple images at once. E.g.:
+<pre> wi-RuudBijnen-BendItGood-v1.exe c:\image-number1.png c:\image-number2.png</pre>
+This will create two (image-number1.png and image-number2.png) PNG images of 4080 x 2720 pixels in the root of the C-drive.
+If you do not supply any arguments two images (debug_img1.png and debug_img2.png) will be created in the /bin/data folder. (These files will be overwritten on each re-run)
+<strong>Note: there will be no visual output when the images are generated</strong></p>
+<p>Here are some (more) images from the Flickr Set:</p>
+<p>[miniflickr photoset_id="72157624766663387"]</p>
+
