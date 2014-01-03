@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Bouncy Balls with Momentum - ruudbijnen.nl</title>
+
+	<meta name="generator" content="DocPad v6.59.6" />
+	
+	<meta name="st:title" content="Bouncy Balls with Momentum">
+	<meta name="st:type" content="blog-post">
+	<link  rel="stylesheet" href="/css/magnific-popup.css" /><link  rel="stylesheet" href="/css/highlight/monokai_sublime.css" /><link  rel="stylesheet" href="/css/highlight/pygments-monokai.css" />
+
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+	<![endif]-->
+
+	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/css/boot.css" media="screen">
+	<link rel="stylesheet" href="/css/bs-docs.css" media="screen"><!-- only for testing... -->
+</head>
+<body>
+<div id="wrapper" class="site">
+	<header id="header">
+		<div class="container">
+			<!--<img id="logo-img" src="images/vector/logo-dark.svg">-->
+			<a id="logo" href="/">
+				<div id="logo-img">logo</div>
+				<h1 id="logo-type">Ruud Bijnen</h1>
+			</a>
+
+			<h2 id="tagline"><em>Coding, Hacking, Designing, Making</em> <i>Web, Interaction, Electronics,
+				Installations</i></h2>
+		</div>
+	</header>
+	<!-- Main Menu -->
+
+<nav id="nav-main" role="navigation">
+	<div class="navbar navbar-default container">
+		<button type="button" class="navbar-toggle" data-toggle="class"
+				data-target="#nav-main-items .navbar-nav" data-value="collapsed">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<div id="nav-main-items">
+			<ul class="nav navbar-nav">
+				
+					
+					<li class="nav-item-home"><a href="/">Home</a></li>
+				
+					
+					<li class="nav-item-blog active"><a href="/blog">Blog</a></li>
+				
+					
+					<li class="nav-item-projects"><a href="/projects">Projects</a></li>
+				
+					
+					<li class="nav-item-about"><a href="/about">About</a></li>
+				
+				
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="search-nav-item"><a href="#search" id="search-nav-link">Search</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+	<!-- Swiftype Search -->
+<section id="search" class="light collapse">
+	<div class="container">
+		<header>
+			<h1>Search the Site</h1>
+		</header>
+	</div>
+	<div id="search-form" class="container">
+		<form novalidate autocomplete="off" role="search">
+			<div class="form-group">
+				<label for="search-input" class="sr-only">Search:</label>
+				<input type="search" id="search-input" placeholder="Search for ..." class="form-control"/>
+			</div>
+		</form>
+	</div>
+	<div id="search-results" class="container"></div>
+</section>
+
+	<!-- Content -->
+  <div class="site-content">
+	<article class="post">
+	<div class="container">
+		<header>
+			<h1>Bouncy Balls with Momentum</h1>
+			<small class="blog-post-meta meta">
+				<dl>
+					<dt>Posted:</dt><dd>November 12 2009</dd>
+					<dt>Tags:</dt><dd>openFrameworks, collision-detection</dd>
+				</dl>
+			</small>
+		</header>
+		
+		<div class="alert alert-danger">
+			<strong>Hold on there!</strong>
+			This blog article is taken from my previous website and quite old.
+			It may be not as interesting or relevant as it used to be, a lot of information may be deprecated.
+		</div>
+		
+		<section class="blog-content">
+			<p>For my school assignment about animation trough code I started out by reading <a title="Foundation Actionscript 3.0 Animation:" href="http://www.friendsofed.com/book.html?isbn=1590597915">Foundation Actionscript 3.0 Animation: Making Things Move!</a> by Keith Peters. Although this book focuses on AS3, the animation principles can be applied to all kind of programming/scripting language.</p>
+<p>I tried to follow along with the examples from the book by converting (some of) the code to c++/openFrameworks. Not all examples where that exciting so I may have skip a couple. In part 3 of the book (Advanced Motion) things got a bit more interesting. And based on some techniques from that chapter I created a small program to see if I understood those principles.</p>
+<p> <img class="alignnone" title="Simple Motion Test Application" src="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/simpleMotionTest2_1.png" alt="" width="570" height="320" /></p>
+<p>On the screen there live some 'funky'Balls, which will bounce around and bump into each other. When a ball is added to the screen it will get a random position, size and velocity vector (speed and direction). The velocity vector is represented by the blue line in this image (although its displayed amplified to make it more clear). The balls do also have a mass, which is the same as the surface area of the circle. This is used for calculating new positions of the balls in case of a collision based on the Law of Conservation of Momentum. Basically this means that when two balls collide there combined velocity before the collision is the same the the combined velocity (because there mass won't change).</p>
+<p>Unfortunately this theory doesn't seem be correctly implemented by me, because when let the program run for a little while, especially when increasing the number of balls (by pressing +), some strange stuff will happen. Balls will get some insane velocity and bounce like maniacs. The log window shows the combined velocity, and if I'm right this should always be the same (if no balls are added or removed). But as you can see this isn't the case.</p>
+<p><img class="alignnone" title="Total Velocity" src="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/simpleMotionTest2_totalvelocity.png" alt="" width="570" height="110" /></p>
+<p>Keeping the balls from going really fast isn't that hard, you could easily add some sort of friction. But the main problem here is this Conservation of Momentum not working properly, or at least that's what I think.</p>
+<p>Keith Peters notices some potential problems in his book, some of which you will see here as well. For example, balls that are getting stuck together. Also because of the way the collision detection works, balls will mostly only collide when they are already (partial) on top of each other. This may be the cause of the total velocity problem I described before.</p>
+<p>Despite of the program being far from perfect I had to leave it (at least for now) like this. I'll need to protect myself from 'freaking' on one small issue, while there is still a lot of stuff to explore.</p>
+<p>For those who like, here is the <a title="Download the Source Code" href="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/simpleMotionTest2_src.rar">source code</a> and <a title="win32 executable" href="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/simpleMotionTest2.rar">compiled program (win32)</a>.</p>
+		</section>
+	</div>
+
+	
+
+	<nav class="nav-article">
+		<div class="container">
+			<div class="navlinks">
+  <a href="/blog/an-all-new-openframeworks-blog/" title="Previous Post: An all new openFrameworks Blog" class="navlinks-prev">&laquo; An all new openFrameworks Blog</a>
+  <a href="/blog/inverse-kinematics-using-the-ofxvectormath-addon/" title="Next Post: Inverse Kinematics using the ofxVectorMath addon" class="navlinks-next">Inverse Kinematics using the ofxVectorMath addon &raquo;</a>
+</div>
+		</div>
+	</nav>
+</article>
+
+<aside class="related">
+	<div class="container">
+		<header>
+			<h3>Related documents</h3>
+		</header>
+		<ul class="related-documents list-documents">
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/bend-it-good/" class="full-article">Bend it Good!</a>
+					<span class="tags">
+						
+						Bend it Good, <em>openFrameworks</em>, Written Images, Cairo
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/bezier-shape-editor-animator/" class="full-article">Bézier Shape Editor/Animator</a>
+					<span class="tags">
+						
+						<em>openFrameworks</em>, bezier, xml
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/blending-textures-in-a-shader/" class="full-article">Blending Textures in an OpenGL Shader</a>
+					<span class="tags">
+						
+						<em>openFrameworks</em>, opengl, glsl, shaders, ofxshader, ofxcontrolpanel
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/inverse-kinematics-using-the-ofxvectormath-addon/" class="full-article">Inverse Kinematics using the ofxVectorMath addon</a>
+					<span class="tags">
+						
+						<em>openFrameworks</em>
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/les-memoires/" class="full-article">Les Mémoires – Memories of past time</a>
+					<span class="tags">
+						
+						Les Mémoires, <em>openFrameworks</em>, Write-Up
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/particle-engines-revisited/" class="full-article">Particle Engines Revisited</a>
+					<span class="tags">
+						
+						<em>openFrameworks</em>, cinder
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/textures-and-opengl-blending/" class="full-article">Textures and OpenGL blending modes</a>
+					<span class="tags">
+						
+						<em>openFrameworks</em>, cinder, particles
+					</span>
+				</li>
+			
+				<li class="list-documents-item project">
+					<span class="badge document-type">project</span>
+					<a href="/projects/bend-it-good/" class="full-article">Bend It Good!</a>
+					<span class="tags">
+						
+						Bend it Good, <em>openFrameworks</em>, Print, Written Images
+					</span>
+				</li>
+			
+				<li class="list-documents-item project">
+					<span class="badge document-type">project</span>
+					<a href="/projects/les-memoires/" class="full-article">Les Mémoires</a>
+					<span class="tags">
+						
+						Les Mémoires, <em>openFrameworks</em>, Installation
+					</span>
+				</li>
+			
+		</ul>
+	</div>
+</aside>
+
+  </div>
+
+	<!-- Footer -->
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			<nav id="site-meta" class="site-meta">
+				<header>
+					<h4>Site Links</h4>
+				</header>
+				<ul>
+					<li><a href="/about#contact" class="contact" title="Contact me">Contact</a></li>
+					<li><a href="#" class="disabled rss" title="RSS feed">RSS feed</a></li>
+					<li><a href="#" class="disabled site-map" title="Site Map">Site Map</a></li>
+					<li><a href="https://github.com/Maff-/ruudbijnen.nl" class="disabled source" title="Source Code @ GitHub">Source Code</a></li>
+				</ul>
+			</nav>
+			<nav id="profiles" class="profiles">
+				<header>
+					<h4>Online Profiles</h4>
+				</header>
+				<ul>
+					<li><a href="https://github.com/Maff-" class="github" title="GitHub">GitHub</a></li>
+					<li><a href="https://www.linkedin.com/in/ruudbijnen" class="linkedin" title="LinkedIn">LinkedIn</a></li>
+					<li><a href="https://twitter.com/ruudbijnen" class="twitter" title="Twitter">Twitter</a></li>
+					<!--<li><a href="https://www.facebook.com/ruudbijnen" class="facebook" title="Facebook">Facebook</a></li>-->
+					<li><a href="https://www.flickr.com/photos/ruudbijnen" class="flickr" title="Flickr">Flickr</a></li>
+					<li><a href="https://vimeo.com/ruudbijnen" class="vimeo" title="Vimeo">Vimeo</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="row">
+			<section id="copyright">
+				<small>© 2014 Ruud Bijnen</small>
+			</section>
+			<nav class="nav-top">
+				<a href="#top" rel="top">Back to Top</a>
+			</nav>
+
+		</div>
+	</div>
+</footer>
+</div>
+
+<script defer="defer"  src="/js/vendor/jquery.min.js"></script><script defer="defer"  src="/js/vendor/bootstrap.min.js"></script><script defer="defer"  src="/js/search.js"></script><script defer="defer"  src="/js/toggle-class.js"></script><script defer="defer"  src="/js/vendor/jquery.magnific-popup.min.js"></script><script defer="defer"  src="/js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="logomark" x="0px" y="0px" width="180px" height="130px" viewBox="0 0 180 130" enable-background="new 0 0 180 130" xml:space="preserve">
+<polygon fill="#404041" points="120,0 150,52 120,104 60,104 45,130 135,130 180,52 150,0"/>
+<polygon fill="#FFE300" points="150,52 120,104 90,52"/>
+<polygon fill="#0EB2C8" points="90,52 120,0 150,52"/>
+<polygon fill="#EB1F80" points="60,104 90,52 120,104"/>
+<polygon fill="#B01F64" points="90,52 60,104 30,52"/>
+<polygon fill="#0C9DB1" points="120,0 90,52 60,0"/>
+<polygon fill="#A7A9AC" points="60,0 30,52 0,0"/>
+</svg>

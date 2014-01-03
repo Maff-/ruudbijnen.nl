@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Bézier Shape Editor/Animator - ruudbijnen.nl</title>
+
+	<meta name="generator" content="DocPad v6.59.6" />
+	
+	<meta name="st:title" content="Bézier Shape Editor/Animator">
+	<meta name="st:type" content="blog-post">
+	<link  rel="stylesheet" href="/css/magnific-popup.css" /><link  rel="stylesheet" href="/css/highlight/monokai_sublime.css" /><link  rel="stylesheet" href="/css/highlight/pygments-monokai.css" />
+
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+	<![endif]-->
+
+	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/css/boot.css" media="screen">
+	<link rel="stylesheet" href="/css/bs-docs.css" media="screen"><!-- only for testing... -->
+</head>
+<body>
+<div id="wrapper" class="site">
+	<header id="header">
+		<div class="container">
+			<!--<img id="logo-img" src="images/vector/logo-dark.svg">-->
+			<a id="logo" href="/">
+				<div id="logo-img">logo</div>
+				<h1 id="logo-type">Ruud Bijnen</h1>
+			</a>
+
+			<h2 id="tagline"><em>Coding, Hacking, Designing, Making</em> <i>Web, Interaction, Electronics,
+				Installations</i></h2>
+		</div>
+	</header>
+	<!-- Main Menu -->
+
+<nav id="nav-main" role="navigation">
+	<div class="navbar navbar-default container">
+		<button type="button" class="navbar-toggle" data-toggle="class"
+				data-target="#nav-main-items .navbar-nav" data-value="collapsed">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<div id="nav-main-items">
+			<ul class="nav navbar-nav">
+				
+					
+					<li class="nav-item-home"><a href="/">Home</a></li>
+				
+					
+					<li class="nav-item-blog active"><a href="/blog">Blog</a></li>
+				
+					
+					<li class="nav-item-projects"><a href="/projects">Projects</a></li>
+				
+					
+					<li class="nav-item-about"><a href="/about">About</a></li>
+				
+				
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="search-nav-item"><a href="#search" id="search-nav-link">Search</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+	<!-- Swiftype Search -->
+<section id="search" class="light collapse">
+	<div class="container">
+		<header>
+			<h1>Search the Site</h1>
+		</header>
+	</div>
+	<div id="search-form" class="container">
+		<form novalidate autocomplete="off" role="search">
+			<div class="form-group">
+				<label for="search-input" class="sr-only">Search:</label>
+				<input type="search" id="search-input" placeholder="Search for ..." class="form-control"/>
+			</div>
+		</form>
+	</div>
+	<div id="search-results" class="container"></div>
+</section>
+
+	<!-- Content -->
+  <div class="site-content">
+	<article class="post">
+	<div class="container">
+		<header>
+			<h1>Bézier Shape Editor/Animator</h1>
+			<small class="blog-post-meta meta">
+				<dl>
+					<dt>Posted:</dt><dd>November 15 2009</dd>
+					<dt>Tags:</dt><dd>openFrameworks, bezier, xml</dd>
+				</dl>
+			</small>
+		</header>
+		
+		<div class="alert alert-danger">
+			<strong>Hold on there!</strong>
+			This blog article is taken from my previous website and quite old.
+			It may be not as interesting or relevant as it used to be, a lot of information may be deprecated.
+		</div>
+		
+		<section class="blog-content">
+			<p>While working on some program that renders creatures shapes using on bézier curves I found that it took quite some time to manual enter coordinate points, and this got even worse when I wanted to update the shape. So I decided to create a small openFrameworks based application to create and edit these shapes.</p>
+<p>
+[caption id="" align="alignnone" width="570" caption="Bézier Shape Editor/Animator screenshot"]<img title="Bézier Shape Editor/Animator screenshot" src="http://www.ruudbijnen.nl/wp-content/uploads/2009/11/BezierShapeEditor01.png" alt="Bézier Shape Editor/Animator screenshot" width="570" height="434" />[/caption]</p>
+<p>The ofxXmlSettings addon (that comes with the <a title="Download openFrameworks" href="http://www.openframeworks.cc/download" target="_blank">openFrameworks 'FAT' version</a>) looked like the perfect candidate to use in order to import/export the created shapes from this app to the one using these shapes. Guided by the example code that comes with the OF download it was a breeze to implement this feature.</p>
+<p>Creating this program was also a nice opportunity to give the <a title="ofxmsaof at Google Code" href="http://code.google.com/p/ofxmsaof/" target="_blank">ofxSimpleGuiToo addon</a> a try. With this addon it's very easy to get a GUI up and running quickly. You can save it's settings to a xml, that will be used to restore your settings on the (re)start of your program. This is a nice feature but not that important for this particular program. One thing I found to be quit frustrating though, was that I wasn't able to access the GUI object as I wanted. I would have liked to remove the top 'page' with the buttons (not in the screenshot above), because it will probably cause some confusion. Also, the way that buttons and other GUI elements work was a bit strange to me. The all work by changing the value of a referenced variable, where you would maybe expect some type of event handler instead.</p>
+<p>Everything in the this addon is coded nicely Object Orientated (as far as I can tell), so you would maybe expect it were a bit simpler to change the way ofxSimpleGuiToo works. The main reason I didn't succeed in getting the GUI the way I wanted it to be, was because the lack of good documentation. In my experience this (the lack of good/proper documentation) applies to almost everything that has to do with openFrameworks, and this is a real shame!</p>
+<p>Coding this program also introduced me to some maths I wasn't familiar with. Although not really important, I found it would be quit useful and user friendly if adding a new point to the shape was done instinctively. To me this means double clicking on the line should result in an extra point on that particular spot. Adding a point based on these coordinates is of course not a big deal, but figuring out where to place its handles in order to keep its shape was bit of a mystery to me. Luckily Google helped me out with some results about Bézier Curves. On <a href="http://www.cubic.org/docs/bezier.htm">http://www.cubic.org/docs/bezier.htm</a> there's some short but clear info about how to calculate a point on a bézier curve, including some example code written in C.</p>
+<p>'Animating' a created shape is also possible. All you have to do is to create a second shape, with exactly the same number of points (which is done by the software), that differs from the first shape and it will automatically morph between the first and second shape. By displaying the Animation GUI (press 2) you can control the the animation options. Unfortunately the animation part isn't as advanced as I wanted it to be, it's actually not even close. But I had to stop working on this, it was supposed to be a quick development of a helper tool, not a taking-way-to-long, full-blown application.</p>
+<p>For those interested, here you can download the <a title="Bezier Shape Editor Source Code" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/bezierShapeEditor1_src.rar">source code</a>, as well as the <a title="Bezier Shape Editor" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/bezierShapeEditor1.rar">application (win32)</a>, but keep it mind this is far from finished.</p>
+		</section>
+	</div>
+
+	
+
+	<nav class="nav-article">
+		<div class="container">
+			<div class="navlinks">
+  <a href="/blog/inverse-kinematics-using-the-ofxvectormath-addon/" title="Previous Post: Inverse Kinematics using the ofxVectorMath addon" class="navlinks-prev">&laquo; Inverse Kinematics using the ofxVectorMath addon</a>
+  <a href="/blog/basic-animated-jellyfish/" title="Next Post: Basic Animated Jellyfish" class="navlinks-next">Basic Animated Jellyfish &raquo;</a>
+</div>
+		</div>
+	</nav>
+</article>
+
+<aside class="related">
+	<div class="container">
+		<header>
+			<h3>Related documents</h3>
+		</header>
+		<ul class="related-documents list-documents">
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/bend-it-good/" class="full-article">Bend it Good!</a>
+					<span class="tags">
+						
+						Bend it Good, <em>openFrameworks</em>, Written Images, Cairo
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/blending-textures-in-a-shader/" class="full-article">Blending Textures in an OpenGL Shader</a>
+					<span class="tags">
+						
+						<em>openFrameworks</em>, opengl, glsl, shaders, ofxshader, ofxcontrolpanel
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/bouncy-balls-with-momentum/" class="full-article">Bouncy Balls with Momentum</a>
+					<span class="tags">
+						
+						<em>openFrameworks</em>, collision-detection
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/inverse-kinematics-using-the-ofxvectormath-addon/" class="full-article">Inverse Kinematics using the ofxVectorMath addon</a>
+					<span class="tags">
+						
+						<em>openFrameworks</em>
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/les-memoires/" class="full-article">Les Mémoires – Memories of past time</a>
+					<span class="tags">
+						
+						Les Mémoires, <em>openFrameworks</em>, Write-Up
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/particle-engines-revisited/" class="full-article">Particle Engines Revisited</a>
+					<span class="tags">
+						
+						<em>openFrameworks</em>, cinder
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/textures-and-opengl-blending/" class="full-article">Textures and OpenGL blending modes</a>
+					<span class="tags">
+						
+						<em>openFrameworks</em>, cinder, particles
+					</span>
+				</li>
+			
+				<li class="list-documents-item project">
+					<span class="badge document-type">project</span>
+					<a href="/projects/bend-it-good/" class="full-article">Bend It Good!</a>
+					<span class="tags">
+						
+						Bend it Good, <em>openFrameworks</em>, Print, Written Images
+					</span>
+				</li>
+			
+				<li class="list-documents-item project">
+					<span class="badge document-type">project</span>
+					<a href="/projects/les-memoires/" class="full-article">Les Mémoires</a>
+					<span class="tags">
+						
+						Les Mémoires, <em>openFrameworks</em>, Installation
+					</span>
+				</li>
+			
+		</ul>
+	</div>
+</aside>
+
+  </div>
+
+	<!-- Footer -->
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			<nav id="site-meta" class="site-meta">
+				<header>
+					<h4>Site Links</h4>
+				</header>
+				<ul>
+					<li><a href="/about#contact" class="contact" title="Contact me">Contact</a></li>
+					<li><a href="#" class="disabled rss" title="RSS feed">RSS feed</a></li>
+					<li><a href="#" class="disabled site-map" title="Site Map">Site Map</a></li>
+					<li><a href="https://github.com/Maff-/ruudbijnen.nl" class="disabled source" title="Source Code @ GitHub">Source Code</a></li>
+				</ul>
+			</nav>
+			<nav id="profiles" class="profiles">
+				<header>
+					<h4>Online Profiles</h4>
+				</header>
+				<ul>
+					<li><a href="https://github.com/Maff-" class="github" title="GitHub">GitHub</a></li>
+					<li><a href="https://www.linkedin.com/in/ruudbijnen" class="linkedin" title="LinkedIn">LinkedIn</a></li>
+					<li><a href="https://twitter.com/ruudbijnen" class="twitter" title="Twitter">Twitter</a></li>
+					<!--<li><a href="https://www.facebook.com/ruudbijnen" class="facebook" title="Facebook">Facebook</a></li>-->
+					<li><a href="https://www.flickr.com/photos/ruudbijnen" class="flickr" title="Flickr">Flickr</a></li>
+					<li><a href="https://vimeo.com/ruudbijnen" class="vimeo" title="Vimeo">Vimeo</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="row">
+			<section id="copyright">
+				<small>© 2014 Ruud Bijnen</small>
+			</section>
+			<nav class="nav-top">
+				<a href="#top" rel="top">Back to Top</a>
+			</nav>
+
+		</div>
+	</div>
+</footer>
+</div>
+
+<script defer="defer"  src="/js/vendor/jquery.min.js"></script><script defer="defer"  src="/js/vendor/bootstrap.min.js"></script><script defer="defer"  src="/js/search.js"></script><script defer="defer"  src="/js/toggle-class.js"></script><script defer="defer"  src="/js/vendor/jquery.magnific-popup.min.js"></script><script defer="defer"  src="/js/app.js"></script>
+
+</body>
+</html>

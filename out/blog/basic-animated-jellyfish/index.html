@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Basic Animated Jellyfish - ruudbijnen.nl</title>
+
+	<meta name="generator" content="DocPad v6.59.6" />
+	
+	<meta name="st:title" content="Basic Animated Jellyfish">
+	<meta name="st:type" content="blog-post">
+	<link  rel="stylesheet" href="/css/magnific-popup.css" /><link  rel="stylesheet" href="/css/highlight/monokai_sublime.css" /><link  rel="stylesheet" href="/css/highlight/pygments-monokai.css" />
+
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+	<![endif]-->
+
+	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/css/boot.css" media="screen">
+	<link rel="stylesheet" href="/css/bs-docs.css" media="screen"><!-- only for testing... -->
+</head>
+<body>
+<div id="wrapper" class="site">
+	<header id="header">
+		<div class="container">
+			<!--<img id="logo-img" src="images/vector/logo-dark.svg">-->
+			<a id="logo" href="/">
+				<div id="logo-img">logo</div>
+				<h1 id="logo-type">Ruud Bijnen</h1>
+			</a>
+
+			<h2 id="tagline"><em>Coding, Hacking, Designing, Making</em> <i>Web, Interaction, Electronics,
+				Installations</i></h2>
+		</div>
+	</header>
+	<!-- Main Menu -->
+
+<nav id="nav-main" role="navigation">
+	<div class="navbar navbar-default container">
+		<button type="button" class="navbar-toggle" data-toggle="class"
+				data-target="#nav-main-items .navbar-nav" data-value="collapsed">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<div id="nav-main-items">
+			<ul class="nav navbar-nav">
+				
+					
+					<li class="nav-item-home"><a href="/">Home</a></li>
+				
+					
+					<li class="nav-item-blog active"><a href="/blog">Blog</a></li>
+				
+					
+					<li class="nav-item-projects"><a href="/projects">Projects</a></li>
+				
+					
+					<li class="nav-item-about"><a href="/about">About</a></li>
+				
+				
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="search-nav-item"><a href="#search" id="search-nav-link">Search</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+	<!-- Swiftype Search -->
+<section id="search" class="light collapse">
+	<div class="container">
+		<header>
+			<h1>Search the Site</h1>
+		</header>
+	</div>
+	<div id="search-form" class="container">
+		<form novalidate autocomplete="off" role="search">
+			<div class="form-group">
+				<label for="search-input" class="sr-only">Search:</label>
+				<input type="search" id="search-input" placeholder="Search for ..." class="form-control"/>
+			</div>
+		</form>
+	</div>
+	<div id="search-results" class="container"></div>
+</section>
+
+	<!-- Content -->
+  <div class="site-content">
+	<article class="post">
+	<div class="container">
+		<header>
+			<h1>Basic Animated Jellyfish</h1>
+			<small class="blog-post-meta meta">
+				<dl>
+					<dt>Posted:</dt><dd>November 24 2009</dd>
+					<dt>Tags:</dt><dd></dd>
+				</dl>
+			</small>
+		</header>
+		
+		<div class="alert alert-danger">
+			<strong>Hold on there!</strong>
+			This blog article is taken from my previous website and quite old.
+			It may be not as interesting or relevant as it used to be, a lot of information may be deprecated.
+		</div>
+		
+		<section class="blog-content">
+			<p>In order to work towards a final goal for this assignment I was thinking of creating a simple creature that could be animated trough code.  At first I was thinking of creating a snake, a fish and even a frog. But these animals where not the thing I was looking for. Than I realized I should give jellyfish a try, I know these creatures can be really beautifull, and also the way they move is fascinating. So after some short search I stumbled upon a blogpost called <a title="Stunning Pictures of Jellyfishes" href="http://abduzeedo.com/stunning-pictures-jellyfishes">Stunning Pictures of Jellyfishes</a> over at Abduzeedo.com. And these pictures are stunning indeed!</p>
+<p>Also there are a lot of nice videos showing the movement of jellyfish over at <a title="Videos tagged 'jellyfish' on Vimeo" href="http://www.vimeo.com/tag:jellyfish">Vimeo</a>, for example, check this one out:</p>
+<p>[vimeo 7036780]</p>
+<p>After analyzing some video's I started with drawing some vector shapes in Illustrator for the body. Keeping in mind I wanted to animate this shape by moving its points. So next step was trying to move the points and handles so I would end up with a different shape that represented the end of the animation. After calculating and converting the coordinates I entered them into the code to create a basic shape animation.</p>
+<p>Also I added the tentacles I created before, that would follow the jellyfish where ever  it goes. To make the animation more fluent I used some easing code that I found for Actionscript. After that I turned my attention to making the jellyfish move a bit more realistic by linking its velocity to the animation stage. This resulted in the program shown below:</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="571" height="321" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://vimeo.com/moogaloop.swf?clip_id=7787246&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed type="application/x-shockwave-flash" width="571" height="321" src="http://vimeo.com/moogaloop.swf?clip_id=7787246&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" allowfullscreen="true" allowscriptaccess="always"></embed></object></p>
+<p>You may download the <a title="JellyFish Source Code" href="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/jellyFish1_633mod_src.rar">source code</a> or <a title="Win32 exe" href="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/jellyFish1_633mod.rar">win32 executable </a>if you like.</p>
+		</section>
+	</div>
+
+	
+
+	<nav class="nav-article">
+		<div class="container">
+			<div class="navlinks">
+  <a href="/blog/bezier-shape-editor-animator/" title="Previous Post: Bézier Shape Editor/Animator" class="navlinks-prev">&laquo; Bézier Shape Editor/Animator</a>
+  <a href="/blog/bend-it-good/" title="Next Post: Bend it Good!" class="navlinks-next">Bend it Good! &raquo;</a>
+</div>
+		</div>
+	</nav>
+</article>
+
+  </div>
+
+	<!-- Footer -->
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			<nav id="site-meta" class="site-meta">
+				<header>
+					<h4>Site Links</h4>
+				</header>
+				<ul>
+					<li><a href="/about#contact" class="contact" title="Contact me">Contact</a></li>
+					<li><a href="#" class="disabled rss" title="RSS feed">RSS feed</a></li>
+					<li><a href="#" class="disabled site-map" title="Site Map">Site Map</a></li>
+					<li><a href="https://github.com/Maff-/ruudbijnen.nl" class="disabled source" title="Source Code @ GitHub">Source Code</a></li>
+				</ul>
+			</nav>
+			<nav id="profiles" class="profiles">
+				<header>
+					<h4>Online Profiles</h4>
+				</header>
+				<ul>
+					<li><a href="https://github.com/Maff-" class="github" title="GitHub">GitHub</a></li>
+					<li><a href="https://www.linkedin.com/in/ruudbijnen" class="linkedin" title="LinkedIn">LinkedIn</a></li>
+					<li><a href="https://twitter.com/ruudbijnen" class="twitter" title="Twitter">Twitter</a></li>
+					<!--<li><a href="https://www.facebook.com/ruudbijnen" class="facebook" title="Facebook">Facebook</a></li>-->
+					<li><a href="https://www.flickr.com/photos/ruudbijnen" class="flickr" title="Flickr">Flickr</a></li>
+					<li><a href="https://vimeo.com/ruudbijnen" class="vimeo" title="Vimeo">Vimeo</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="row">
+			<section id="copyright">
+				<small>© 2014 Ruud Bijnen</small>
+			</section>
+			<nav class="nav-top">
+				<a href="#top" rel="top">Back to Top</a>
+			</nav>
+
+		</div>
+	</div>
+</footer>
+</div>
+
+<script defer="defer"  src="/js/vendor/jquery.min.js"></script><script defer="defer"  src="/js/vendor/bootstrap.min.js"></script><script defer="defer"  src="/js/search.js"></script><script defer="defer"  src="/js/toggle-class.js"></script><script defer="defer"  src="/js/vendor/jquery.magnific-popup.min.js"></script><script defer="defer"  src="/js/app.js"></script>
+
+</body>
+</html>
