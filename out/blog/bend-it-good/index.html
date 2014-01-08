@@ -19,7 +19,23 @@
 
 	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="/css/boot.css" media="screen">
-	<link rel="stylesheet" href="/css/bs-docs.css" media="screen"><!-- only for testing... -->
+	
+
+	<script>
+	window.gaFired = false;
+	window.fireGa = function() {
+		if (window.gaFired) return;
+		window.gaFired = true;
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-19598839-1', 'www.ruudbijnen.nl');
+		ga('send', 'pageview');
+	}
+</script>
 </head>
 <body>
 <div id="wrapper" class="site">
@@ -295,6 +311,12 @@ If you do not supply any arguments two images (debug_img1.png and debug_img2.png
 </div>
 
 <script defer="defer"  src="/js/vendor/jquery.min.js"></script><script defer="defer"  src="/js/vendor/bootstrap.min.js"></script><script defer="defer"  src="/js/search.js"></script><script defer="defer"  src="/js/toggle-class.js"></script><script defer="defer"  src="/js/vendor/jquery.magnific-popup.min.js"></script><script defer="defer"  src="/js/app.js"></script>
+
+<script>
+	if (window.cookieOkay || document.cookie.indexOf('cookieOkay=1') >= 0) {
+		if (typeof window.fireGa == 'function') window.fireGa();
+	}
+</script>
 
 </body>
 </html>

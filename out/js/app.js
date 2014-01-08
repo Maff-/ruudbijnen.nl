@@ -34,6 +34,9 @@
 		var d = new Date();
 		d.setDate(d.getDate() + 356);
 		document.cookie = cok + '=' + (okay ? '1' : '0') + '; expires=' + d.toUTCString();
+    if (okay && typeof window.fireGa == 'function') {
+        window.fireGa()
+    }
 	}
 
 })(jQuery);
