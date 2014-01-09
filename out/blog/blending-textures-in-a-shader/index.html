@@ -7,6 +7,7 @@
 	<title>Blending Textures in an OpenGL Shader - ruudbijnen.nl</title>
 
 	<meta name="generator" content="DocPad v6.59.6" />
+	<meta name="keywords" content="Ruud Bijnen,Ruud,Bijnen,Creative,Developer,openFrameworks,OF,Cinder,LibCinder,Processing,VVVV,Web,Developer,Design,labbinaer,Studio Roosegaarde">
 	
 	<meta name="st:title" content="Blending Textures in an OpenGL Shader">
 	<meta name="st:type" content="blog-post">
@@ -105,14 +106,14 @@
 
 	<!-- Content -->
   <div class="site-content">
-	<article class="post">
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="container">
 		<header>
-			<h1>Blending Textures in an OpenGL Shader</h1>
+			<h1 itemprop="name">Blending Textures in an OpenGL Shader</h1>
 			<small class="blog-post-meta meta">
 				<dl>
-					<dt>Posted:</dt><dd>September 15 2010</dd>
-					<dt>Tags:</dt><dd>openFrameworks, opengl, glsl, shaders, ofxshader, ofxcontrolpanel</dd>
+					<dt>Posted:</dt><dd itemprop="datePublished"><time datetime="2010-09-15T12:13:47+02:00">September 15 2010</time></dd>
+					<dt>Tags:</dt><dd itemprop="keywords">openFrameworks, opengl, glsl, shaders, ofxshader, ofxcontrolpanel</dd>
 				</dl>
 			</small>
 		</header>
@@ -123,7 +124,7 @@
 			It may be not as interesting or relevant as it used to be, a lot of information may be deprecated.
 		</div>
 		
-		<section class="blog-content">
+		<section class="blog-content" itemprop="articleBody">
 			<p>For my assignment I wanted to get more familiar with the use of OpenGL shaders and the used language (GLSL). I started by searching the <a href="http://www.openframeworks.cc/forum/">openFrameworks forums</a>, and found that the <a href="http://www.lighthouse3d.com/opengl/glsl/">GLSL tutorial</a> over at Lighthouse3D was much appreciated. Also the <a href="http://www.openframeworks.cc/forum/viewtopic.php?f=9&amp;t=2729">ofxShader examples</a> topic is a must read, but you need to do some puzzling in order to get things working with the latest version of OF.</p>
 <p>Going trough different tutorials on the web isn't as easy as you might think, OpenGL has been around for quite some time, and has evolved over the years, rendering some tutorials seriously out of date. An other difficulty I found is there are different ways to achieve the same goal, without it being clear if something is depreciated, or bad practice. Using openFrameworks is great, it takes a lot of the hard work away, but this has the downside that it's user may not know what's happening behind the scenes, which in my case has caused a lot of trouble and confusion when trying out these shader techniques. (Luckily you can browse the source and learn a lot from that, but still it can be a head scratcher some times).</p>
 <p>After getting the examples running from the above mentioned forum thread I tried to create a simple program and shader from scratch, I left the FBO (Frame Buffer Object) out of it to simplify things.  The program would allow you to change the brightness and contrast of a load image by using a (fragment) shader.</p>
