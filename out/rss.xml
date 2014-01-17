@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[ruudbijnen.nl]]></title>
+        <description><![CDATA[...]]></description>
+        <link>http://www.ruudbijnen.nl</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Fri, 17 Jan 2014 15:26:15 GMT</lastBuildDate>
+        <atom:link href="http://www.ruudbijnen.nl/rss.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Fri, 17 Jan 2014 15:25:57 GMT</pubDate>
+        <item>
+            <title><![CDATA[Fresh look for 2014]]></title>
+            <description><![CDATA[<p>A fresh start in the new year, <em>2014</em>, brings a new and fresh website. I&#39;ve spent some time on a new look and updated
+the <a href="/projects">portfolio</a> and all of the other pages.</p>
+<p>Instead of a heavy, bulk WordPress site (or something similar) I&#39;ve opted for using a <em>static site generator</em>.
+I plan on writing a separate post about this experience some time in the near future.</p>
+]]></description>
+            <link>http://www.ruudbijnen.nl/blog/fresh-look-for-2014/</link>
+            <guid isPermaLink="true">
+                http://www.ruudbijnen.nl/blog/fresh-look-for-2014/            </guid>
+            <pubDate>Fri, 03 Jan 2014 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Les Mémoires – Memories of past time]]></title>
+            <description><![CDATA[<p>It's been some time since I and fellow students finished the concept stage of the Les Mémoires project, but in the mean time we have been working on realizing the concept and building the installation for real. A great opportunity as lots of these sorts of projects never sees the light of day. Because realization is near, I would like to tell the world a little more about the background story.<!--more-->
+<h2>A concept evolved over time</h2>
+For this project we were asked to develop an installation for the new building of our university. The only restriction we had was that it should serve as a clock, so students, tutors and visitors could tell the time.
+I took the job of project manager on me, and together with my team we came up with the Les Mémoires installation. Our goal was to make an installation that was more than just a clock; it should invoke people to stand still at the passing of time, while being entertaining and memorable.</p>
+<p>Inspired by one the buildings features, walls covert with vertical wooden beams, we thought of a video installation that would slice up an image and freeze each slice as seconds passed by. The group agreed this was an idea worth exploring, so our Motion Graphics guy whipped up a quick experiment. The results were very promising, and it was decided we needed early software to test the effect on all sorts of video material, including live feeds. As I was the most appropriate person to write this, I took the role of software engineer alongside of being project manager.
+By applying the RERO (Release early, release often) development philosophy I was able to get the results we wanted fast. This allowed us to test the installation on site in an early stage, which led to new insights and time to tweak.</p>
+<p>[vimeo 19844832 658 362]</p>
+<p>As you can see in the embed video above we also experimented with a controversial setup; the screen is rotated 90°, resulting in a portrait orientated image. This was found to be more interesting for its users, as it breaks the association with the boring narrowcasting and other miscellaneous screens than hang around in the university's building.
+The test also confirmed our suspicion that placing the installation in the main hallway, next to its four elevators, would be great idea. It's a place where most of people pass by every day, a place where a clock would make most sense, but also a place where people have to just stand and wait. That is; until now! With an interactive installation like Les Mémoires people get the opportunity to enjoy their time 'waiting' on the elevator, and leave their mark in history at the same time.
+<h2>From concept to video installation and beyond</h2>
+As mentioned before, we desired our installation to be more than just a clock; it should also provide a way to leave a mark in time, for others to be seen, and remembered by. You could say the installation isn't about telling time; instead it's about the passage of time. Because, how hard we try, we won't be able to undo the past. Also, a funny thing about time is the way it fades our memories, as none will last forever. These aspects of time and memories are something we wanted to include in the installation as well.</p>
+<p>To achieve these goals we ended up with a video installation which consists of a camera, a large screen and a pc with internet access.
+The camera records images of the people standing in front of the screen, the images are then processed into memories of time (explained below) and displayed on the screen. It takes a whole minute to fill the screen with the processed image, after which its represents a memory of that pasted minute and is uploaded to a Flickr account. These memories can then be retrieved through a special website.</p>
+<p><a href="http://www.ruudbijnen.nl/wp-content/uploads/2011/02/lesmemoires_systemoverview.png"><img class="aligncenter size-full wp-image-213" title="Les Mémoires - System Overview" src="http://www.ruudbijnen.nl/wp-content/uploads/2011/02/lesmemoires_systemoverview.png" alt="A illustration of the system overview of the Les Mémoires installation" width="650" height="403" /></a>
+<h2>Slicing time – from life image to memory</h2>
+So to get from a life feed to unique memories of time could be achieved in a countless ways, this is how we did it:</p>
+<p>Every exact second a capture gets taken from the life feed. From this capture a slice (1/60<sup>th</sup> of the full height of the image) is taken, and displayed frozen on the screen, partly blocking the view of the life feed underneath. This process is repeated every second and slowly filling the screen with frozen slices.
+As time passes memories fade, this is exactly what is happening in our program as well. The frozen slices are not only a representation of a particular passed second, it also contains information of the previous passed seconds.</p>
+<p><a href="http://www.ruudbijnen.nl/wp-content/uploads/2011/02/lesmemoires_timesliceeffect.png"><img class="aligncenter size-full wp-image-214" title="Les Mémoires - Time Slice Effect" src="http://www.ruudbijnen.nl/wp-content/uploads/2011/02/lesmemoires_timesliceeffect.png" alt="A illustration of the time slice effect of the Les Mémoires installation" width="655" height="820" /></a></p>
+<p>After a minute is passed the screen resets; an animated 'wipe' sweeps the memories away and a fresh minute starts.</p>
+<p>In order for the installation to act as a clock as well, we tried different ways of displaying the time on screen, ranging from very abstract to plain simple digital notation. Tests with the target audience (unfortunately) showed that using a somewhat abstract form was not suitable, and we ended up with overlaying the last frozen slice with the digital notation. This moves every second to the next frozen slice, emphasizing the 'ticking' of time.</p>
+<p><h2>Saving those precious memories</h2>
+Part of the concept we presented was a website that would allow the users to review the memories they were part of. In order to achieve this we needed to distribute the images to the web, we didn't want to serve them directly from our machine, as this could lead to security and reliance issues.
+Because we have a lot of images we want to upload every day (one every minute) we looked at hosting them separate from our website. Flickr was chosen as the most suitable candidate, although a Pro account would be needed due to the amount of images, it has a rich API and lots of readymade libraries/classes to get images quick and easy from and to their site.</p>
+<p>Unfortunately no Flickr add-on or easy to integrate C++ lib was available for OpenFrameworks, so I decided to whip up a PHP daemon that handled the parsing and uploading of memories. This approach has a fair share of advantages; it is easy and quickly to develop (by using phpFlickr), it is easier to maintain (for example if the API changes) also by other people without C++ knowledge, and if something in the upload process goes wrong the main program just keeps running. The fact that this approach is harder to deploy (not just running one executable) could be seen as a disadvantage.</p>
+<p>On the other end of the system, the website users can visit, is a rich AJAX based website driven with <a href="http://jquery.com/">JQuery</a> and a Flickr JavaScript helper.
+For the first iterations of this website design I developed the interaction design. Later this served as a base for a new team member responsible for the graphic design.
+<h2>Some technical details</h2>
+<ul>
+	<li>Custom software written in <a href="http://openframeworks.cc/">openFrameworks</a>, with used addons including ofxOpenCv, ofxThreadedImageSaver, ofxArgs and ofxXmlSettings</li>
+	<li>PC with AMD Athlon II X2 250 processor, 4GB memory and ATI Radeon HD5670 video card</li>
+	<li>Microsoft LifeCam Cinema HD</li>
+	<li>Samsung UE46C5100 (46" Full HD LED TV)</li>
+	<li>Running on a tweaked Microsoft Windows XP setup with <a href="http://www.coretechnologies.com/products/AlwaysUp/">AlwaysUp</a></li>
+</ul>
+<h2>My involvement – a recap, and some forgotten stuff</h2>
+<ul>
+	<li>Project managing</li>
+	<li>Software engineering (OpenFrameworks app, PHP Upload Daemon)</li>
+	<li>Researched needed hardware</li>
+	<li>System configuration and tweaking</li>
+	<li>First iterations website interaction design</li>
+	<li>Design one-pager</li>
+</ul>
+There is also an <a href="/projects/les-memoires/">entry in my portfolio about this project</a>.</p>]]></description>
+            <link>http://www.ruudbijnen.nl/blog/les-memoires/</link>
+            <guid isPermaLink="true">
+                http://www.ruudbijnen.nl/blog/les-memoires/            </guid>
+            <pubDate>Sun, 13 Feb 2011 01:00:43 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Blending Textures in an OpenGL Shader]]></title>
+            <description><![CDATA[<p>For my assignment I wanted to get more familiar with the use of OpenGL shaders and the used language (GLSL). I started by searching the <a href="http://www.openframeworks.cc/forum/">openFrameworks forums</a>, and found that the <a href="http://www.lighthouse3d.com/opengl/glsl/">GLSL tutorial</a> over at Lighthouse3D was much appreciated. Also the <a href="http://www.openframeworks.cc/forum/viewtopic.php?f=9&amp;t=2729">ofxShader examples</a> topic is a must read, but you need to do some puzzling in order to get things working with the latest version of OF.</p>
+<p>Going trough different tutorials on the web isn't as easy as you might think, OpenGL has been around for quite some time, and has evolved over the years, rendering some tutorials seriously out of date. An other difficulty I found is there are different ways to achieve the same goal, without it being clear if something is depreciated, or bad practice. Using openFrameworks is great, it takes a lot of the hard work away, but this has the downside that it's user may not know what's happening behind the scenes, which in my case has caused a lot of trouble and confusion when trying out these shader techniques. (Luckily you can browse the source and learn a lot from that, but still it can be a head scratcher some times).</p>
+<p>After getting the examples running from the above mentioned forum thread I tried to create a simple program and shader from scratch, I left the FBO (Frame Buffer Object) out of it to simplify things.  The program would allow you to change the brightness and contrast of a load image by using a (fragment) shader.</p>
+<p><a title="shaderTest02b by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/ruudbijnen/4992917760/"><img src="http://farm5.static.flickr.com/4146/4992917760_a379294994.jpg" alt="shaderTest02b" width="500" height="253" /></a></p>
+<p>Downloads: <a href="http://lab.ruudbijnen.nl/~ruud/BlogContent/shaderTest02b-src.zip">source code</a> (code::blocks), <a href="http://lab.ruudbijnen.nl/~ruud/BlogContent/shaderTest02b-bin.zip">binaries</a> (win32)</p>
+<p>For this program and the next one I've used the most up to date version of ofxShader that I could find. It's located at <a href="http://code.google.com/p/kyle/">Kyle McDonald's Google Code page</a>: <a href="http://code.google.com/p/kyle/source/browse/trunk/openframeworks/addons/ofxShader/">http://code.google.com/p/kyle/source/browse/trunk/openframeworks/addons/ofxShader/</a> (At the time of this writing the latest version is from revision 81, Aug 08, 2010).</p>
+<p>This version is a bit different from the one used in the examples by Theo Watson, mainly being the following:
+[cpp light="true"]// loading the shader, usually done in app::setup()
+ofxShader::loadShader() -&gt; ofxShader::setup()
+// enabling the shader, usually done in app::draw()
+ofxShader::setShaderActive(true) -&gt; ofxShader::begin()
+// setting an uniform, to set a shader parameter, usually done in app::draw()
+ofxShader::setUniformVariable*type*() -&gt; ofxShader::setUniform(*type*)
+// disabling the shader, usually done in app::draw()
+ofxShader::setShaderActive(false) -&gt; ofxShader::end()[/cpp]
+This version by <a href="http://kylemcdonald.net/">Kyle McDonald</a> also includes an easy way (ofxShader::setTexture()) to bind an image or texture to the shader. This gets me to my second program.</p>
+<p>In <a href="http://www.openframeworks.cc/forum/viewtopic.php?f=8&amp;t=3400&amp;hilit=blend">this topic</a> someone suggests to use a GLSL shader to blend textures like done in Adobe Photoshop. Romain Dura has created a glsl file containing a lot of blend modes used in Photoshop which you can find in <a href="http://blog.mouaif.org/?p=94">his blog post</a>, I tried to combine theses thing together. After quite some struggling (see rant at the start of this post) I've managed  to get things working which I turned into a app.</p>
+<p>This was also a nice opportunity to try out the <a href="http://github.com/ofTheo/ofxControlPanel/">ofxControlPanel</a> GUI add-on by <a href="http://www.theowatson.com/">Theo Watson</a>, which is a nice alternative for <a href="http://www.memo.tv/">Memo</a>'s <a href="http://github.com/memo/msalibs/tree/master/ofxSimpleGuiToo/">ofxSimpleGuiToo</a>.</p>
+<p><a title="ShaderTextureBlendingGui by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/ruudbijnen/4992392971/"><img src="http://farm5.static.flickr.com/4083/4992392971_93f1a19ca5_z.jpg" alt="ShaderTextureBlendingGui" width="580" height="480" /></a>
+<a title="ShaderTextureBlendingResult by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/ruudbijnen/4992397497/"></a></p>
+<p>In the control panel you can set a (different) Base or Blend image by double-clicking on a file listed in the appropriate file lister just below the preview. In the right column of the control panel you find sliders and a dropdown list that will allow you to change the shader parameters. The contrast and brightness is applied after blending the Base and Blend image. The Blend Mix parameter allows you to dim the effect of the blending where a 0.0 value represents the original Base image and 1.0 value the blended Base + Blend image.</p>
+<p>The result of above settings is displayed here below.</p>
+<p>Downloads: <a href="http://lab.ruudbijnen.nl/~ruud/BlogContent/ShaderTextureBlending-src.zip">source code</a> (code::blocks), <a href="http://lab.ruudbijnen.nl/~ruud/BlogContent/ShaderTextureBlending-bin.zip">binaries</a> (win32)</p>
+<p><a title="ShaderTextureBlendingResult by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/ruudbijnen/4992397497/"><img src="http://farm5.static.flickr.com/4092/4992397497_14dbdb4695_z.jpg" alt="ShaderTextureBlendingResult" width="512" height="512" /></a></p>
+<p>[miniflickr photoset_id="72157624960878548"]</p>]]></description>
+            <link>http://www.ruudbijnen.nl/blog/blending-textures-in-a-shader/</link>
+            <guid isPermaLink="true">
+                http://www.ruudbijnen.nl/blog/blending-textures-in-a-shader/            </guid>
+            <pubDate>Wed, 15 Sep 2010 10:13:47 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Textures and OpenGL blending modes]]></title>
+            <description><![CDATA[<p>Although <a href="http://openframeworks.cc/">openFrameworks</a> includes example programs on how the ofImage and ofTexture classes can be used, it doesn't really show you how to use it in a cool way, it's just the basics. Imho this is a great loss, look how <a title="Cinder C++ Library" href="http://libcinder.org/">Cinder</a> does this! It's awesome, it includes a wide range of examples, some as simple as the ones that come with OF, but also the code to some very cool, creative apps. (like <a href="http://vimeo.com/5454686">Earthquake</a>, <a href="http://vimeo.com/5637328">HodginParticlesRedux</a>, Wisteria).</p>
+<p>Anyway, I wanted to learn more about using textures and blending in OF, so I started searching about this topic in the <a href="http://www.openframeworks.cc/forum/">forums</a> and came across the '<a title="Webcam Piano 2 -- Graphics behind it?" href="http://www.openframeworks.cc/forum/viewtopic.php?f=23&amp;t=4436">Webcam Piano 2 -- Graphics behind it?</a>' topic. In which <a title="Mehmet S. Akten (aka Memo) personal website" href="http://www.memo.tv/">Memo</a> explains about some aspects of his stunning <a title="Webcam Piano 2.0 by Memo" href="http://www.msavisuals.com/webcam_piano_2">Webcam Piano 2.0</a> (video below).</p>
+<p>[vimeo 13938077 580 435]</p>
+<p>Creating the colorful bubbles turns out to be surprisingly easy. The image of a grayscale bubble/circle is loaded and used as a texture. But before drawing the texture to screen a glBlendFunc is used.
+void testApp::setup() {
+  img.loadImage("circle.png"); // load a grayscale image
+}
+void testApp::draw() {
+  glEnable(GL_BLEND); // enable GL blending
+  glBlendFunc(GL_ONE, GL_ONE);
+  ofSetColor(0xFF0000); // set color to red
+  img.draw(0, 0); // upper left corner
+  glDisable(GL_BLEND);
+}
+A simple piece of code like this would display a red circle.</p>
+<p>I used this technique together with some code to create a gradient/rainbow effect. Which resulted in the first, and simple test program:
+<a title="coloredTexturesTest01 by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/ruudbijnen/4969154498/"><img src="http://farm5.static.flickr.com/4149/4969154498_dccc336805.jpg" alt="coloredTexturesTest01" width="500" height="375" /></a></p>
+<p>Download the <a title="coloredTexturesTest01-bin.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/coloredTexturesTest01-bin.zip">win32 binaries</a> or <a title="coloredTexturesTest01-src.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/coloredTexturesTest01-src.zip">source code</a>. The 'rainbow code' is an adaptation of this excellent article '<a title="Tutorial: Making annoying rainbows in javascript" href="http://www.krazydad.com/makecolors.php">Making annoying rainbows in javascript</a>'.</p>
+<p>After this boring test program I tried to combine this technique with the previous created particle emitter. Each particle has it's own color, and a pointer to the texture. (so only 1 texture is used for all particles)
+[vimeo 14771199 580 326]</p>
+<p>Once again there's <a title="texturedParticles01-bin.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/texturedParticles01-bin.zip">an executable</a> and <a title="texturedParticles01-src.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/texturedParticles01-src.zip">source code</a> available.</p>]]></description>
+            <link>http://www.ruudbijnen.nl/blog/textures-and-opengl-blending/</link>
+            <guid isPermaLink="true">
+                http://www.ruudbijnen.nl/blog/textures-and-opengl-blending/            </guid>
+            <pubDate>Tue, 07 Sep 2010 20:09:36 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[WrittenImages on Vimeo]]></title>
+            <description><![CDATA[<p>There's a cool video from <a title="WrittenImages" href="http://writtenimages.net/">WrittenImages</a> on Vimeo.
+  It shows all the submission being print (<a title="Bend-it-Good" href="/blog/bend-it-good/">mine</a> is at 1:03). Check it out below:</p>
+
+<iframe src="//player.vimeo.com/video/14744251?color=ff0179" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="http://vimeo.com/14744251">Written Images (Preview and testprint of every submission.)</a>
+  from <a href="http://vimeo.com/deffekt">d_effekt</a> on <a href="https://vimeo.com">Vimeo</a>.</p>]]></description>
+            <link>http://www.ruudbijnen.nl/blog/writtenimages-on-vimeo/</link>
+            <guid isPermaLink="true">
+                http://www.ruudbijnen.nl/blog/writtenimages-on-vimeo/            </guid>
+            <pubDate>Tue, 07 Sep 2010 13:49:32 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Particle Engines Revisited]]></title>
+            <description><![CDATA[<p>While researching the new and exciting <a title="The library for professional-quality creative coding in C++" href="http://libcinder.org/">Cinder C++ Library</a> some time ago I also came across the excellent starting guide <a title="Hello Cinder" href="http://libcinder.org/docs/hello_cinder.html">'Hello Cinder'</a> by <a title="Robert Hodgin" href="http://roberthodgin.com/" target="_blank">Robert Hodgin</a>. It starts with a quick note on how to dive in, how to load images and how to draw shapes. After that, the fun begins, Robert explains how build a simple Particle Engine (and this is still in chapter 1). Chapters 2 trough 5 build on this particle engine and show how to use this technique in different ways.
+There's nothing new about this technique, but the way Robert guides you gives you great insight in how they could be used. This made me want to revisit the topic again, and try some stuff out.</p>
+<p>Note: the guide is of course about using a particle engine within a Cinder app (C++), but it's easy to use the methods and principles in any programming language.</p>
+<p>After reading the whole guide I started to experiment and coding in OpenFrameworks, creating a simple Particle and ParticleController class. No interaction, or other interesting stuff was added in this stage, so it's not really worth posting pictures/code.</p>
+<p>The second program contained some more attributes, like the lifetime of each particle. Also some basic 'spawn' interaction was added. Although it's still very basic, it already looking pretty cool :)</p>
+<p>[vimeo 14749984 580 328]</p>
+<p>As always you may download the <a title="basicParticles02-bin.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/basicParticles02-bin.zip">win32 executable</a> or <a title="basicParticles02-src.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/basicParticles02-src.zip">the source code</a>.</p>
+<p>The third program has no interaction, but acts as a template for something I could use more often. The ParticleController acts as a Emitter, and has several attributes that define it's appearance. You can control the emitting direction and it's radius, as well as the emitting speed and min/max size of the particles.</p>
+<p><a title="basicParticles03 by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4965646444/"><img src="http://farm5.static.flickr.com/4108/4965646444_ca02dfae7f.jpg" alt="basicParticles03" width="500" height="281" /></a></p>
+<p>You may also download this programs <a title="basicParticles03-bin.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/basicParticles03-bin.zip">executable</a> or <a title="basicParticles03-src.zip" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/basicParticles03-src.zip">source code</a>.</p>
+<p>Next I'll be checking into the use of textures, but that's for another post!</p>]]></description>
+            <link>http://www.ruudbijnen.nl/blog/particle-engines-revisited/</link>
+            <guid isPermaLink="true">
+                http://www.ruudbijnen.nl/blog/particle-engines-revisited/            </guid>
+            <pubDate>Mon, 06 Sep 2010 21:00:28 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Bend it Good!]]></title>
+            <description><![CDATA[<p>Almost two months have already passed since I've sent my contribution to the <a title="WrittenImages" href="http://writtenimages.net/" target="_blank">WrittenImages project</a>. Finally I've find some time blog about this great project, and my contribution.</p>
+<p><img class="aligncenter" title="Bend-it-Good Final Example" src="http://farm5.static.flickr.com/4084/4963186109_a4a2003e0f.jpg" alt="" width="500" height="333" /></p>
+<p>WrittenImages is a project of whereby designers/artists/coders can submit there image generating program that will be used to create a truly unique book about generative art. Each time a book is printed, the selected programs will output a new version of the used images.</p>
+<p>For my contribution I wanted to create a program that could generate a bunch of 'tiles' that all would align perfectly on all sides. These square tiles would have a couple of fixed points along each of the four sides where 'lines' could be connected. So, as long as these lines would stay within this tile, and would connect to the same point as the neighboring tile, there should be clean, pixel perfect, image.</p>
+<p>This image shows what I had in mind: (it's created in Adobe Illustrator)
+<a title="Bend it Good idea by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4963446195/"><img src="http://farm5.static.flickr.com/4113/4963446195_8f4ff1f1bf.jpg" alt="Bend it Good idea" width="500" height="336" /></a></p>
+<p>I started to experiment with some code, and I came up with this first test. Every tile has a single (straight) line, which is connected to two (but not the same) 'endpoints', also every tile lines up with its neighbors. You can see the numbered tiles, these numbers indicate the order in which they were generated.
+<a title="Bend-it-Good Work in Progress 01 by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4964036048/"><img src="http://farm5.static.flickr.com/4090/4964036048_7cc21133d2.jpg" alt="Bend-it-Good Work in Progress 01" width="500" height="385" /></a></p>
+<p>After that I started working on using multiple lines per tile, this wan't to hard.</p>
+<p>Next I created the code that 'bended' these lines, so they would be right-angled to all sides, this would insure a consistent look, and side matching tiles.
+<a title="Bend-it-Good Work in Progress 02 by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4964035988/"><img src="http://farm5.static.flickr.com/4089/4964035988_9d36b62a44.jpg" alt="Bend-it-Good Work in Progress 02" width="500" height="385" /></a></p>
+<p>Now I tried creating some high resolution images, as these are required for print, by using the <a title="WrittenImages OpenFrameworks C++ Code" href="http://writtenimages.net/code/source.zip">template code</a> prepared by WrittenImages. This turned out to be awfull! It's based around the ofxTileSaver addon, which didn't render the images properly! The smooth lines got cut off at the edge of the render tiles (not to be confused with the 'tiles' I was talking about before). So I started looking for an alternative and found <a title="Cairo is a 2D graphics library with support for multiple=">Cairo</a> (and ofxCairo, which you find at<a href="http://code.google.com/p/vanderlin/" target="_blank"> Todd Vanderlin's Google Code page</a>) to be very useful.</p>
+<p>To my own opinion the work was coming along pretty well, but it still missed something. I tried different colors, but ended up with Flickr like color set (Magenta, Cyan White and Black). To give the lines on the tiles a little more depth I added a soft glow/gradient on the background:
+<a title="Bend-it-Good Work in Progress 06 by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4964111390/"><img src="http://farm5.static.flickr.com/4095/4964111390_24afc55ab6.jpg" alt="Bend-it-Good Work in Progress 06" width="500" height="500" /></a></p>
+<p>I liked it much better already, but I thought it still could use some spice, so I experimented in Photoshop, and came up with a mosaic like effect that I could implement in the code.
+<a title="Bend-it-Good Work in Progress Mozaic Test by Ruud Bijnen, on Flickr" href="http://www.flickr.com/photos/53657578@N05/4964333550/"><img src="http://farm5.static.flickr.com/4091/4964333550_9a84094c67.jpg" alt="Bend-it-Good Work in Progress Mozaic Test" width="400" height="400" /></a></p>
+<p>For the final version of the program I randomized some parameters, so each image would be unique, but also to similar to next one. For instance the tile size won't be always the same size, there a a couple of sizes, of which some will be chosen more often that an other. Also 'layer' order will be different, sometimes the cyan colored path will be on top, sometimes it will be magenta.
+There's also another parameter that controls the likeliness of the endpoints of different (colored) lines overlapping, this effects the overall look and feel of the images. (How chaotic the image will look).</p>
+<p>You may <a title="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/wi-RuudBijnen-BendItGood-v1.zip" href="http://">download the Win32 executable</a> if you like.
+Like any other submission to the WrittenImages project the program must be run with the full path (and filename) of a desired image as parameter. You can supply multiple paths as paramaters in order to create multiple images at once. E.g.:
+ wi-RuudBijnen-BendItGood-v1.exe c:\image-number1.png c:\image-number2.png
+This will create two (image-number1.png and image-number2.png) PNG images of 4080 x 2720 pixels in the root of the C-drive.
+If you do not supply any arguments two images (debug_img1.png and debug_img2.png) will be created in the /bin/data folder. (These files will be overwritten on each re-run)
+<strong>Note: there will be no visual output when the images are generated</strong></p>
+<p>Here are some (more) images from the Flickr Set:</p>
+<p>[miniflickr photoset_id="72157624766663387"]</p>]]></description>
+            <link>http://www.ruudbijnen.nl/blog/bend-it-good/</link>
+            <guid isPermaLink="true">
+                http://www.ruudbijnen.nl/blog/bend-it-good/            </guid>
+            <pubDate>Mon, 06 Sep 2010 14:18:42 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Basic Animated Jellyfish]]></title>
+            <description><![CDATA[<p>In order to work towards a final goal for this assignment I was thinking of creating a simple creature that could be animated trough code.  At first I was thinking of creating a snake, a fish and even a frog. But these animals where not the thing I was looking for. Than I realized I should give jellyfish a try, I know these creatures can be really beautifull, and also the way they move is fascinating. So after some short search I stumbled upon a blogpost called <a title="Stunning Pictures of Jellyfishes" href="http://abduzeedo.com/stunning-pictures-jellyfishes">Stunning Pictures of Jellyfishes</a> over at Abduzeedo.com. And these pictures are stunning indeed!</p>
+<p>Also there are a lot of nice videos showing the movement of jellyfish over at <a title="Videos tagged 'jellyfish' on Vimeo" href="http://www.vimeo.com/tag:jellyfish">Vimeo</a>, for example, check this one out:</p>
+<p>[vimeo 7036780]</p>
+<p>After analyzing some video's I started with drawing some vector shapes in Illustrator for the body. Keeping in mind I wanted to animate this shape by moving its points. So next step was trying to move the points and handles so I would end up with a different shape that represented the end of the animation. After calculating and converting the coordinates I entered them into the code to create a basic shape animation.</p>
+<p>Also I added the tentacles I created before, that would follow the jellyfish where ever  it goes. To make the animation more fluent I used some easing code that I found for Actionscript. After that I turned my attention to making the jellyfish move a bit more realistic by linking its velocity to the animation stage. This resulted in the program shown below:</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="571" height="321" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://vimeo.com/moogaloop.swf?clip_id=7787246&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed type="application/x-shockwave-flash" width="571" height="321" src="http://vimeo.com/moogaloop.swf?clip_id=7787246&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" allowfullscreen="true" allowscriptaccess="always"></embed></object></p>
+<p>You may download the <a title="JellyFish Source Code" href="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/jellyFish1_633mod_src.rar">source code</a> or <a title="Win32 exe" href="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/jellyFish1_633mod.rar">win32 executable </a>if you like.</p>]]></description>
+            <link>http://www.ruudbijnen.nl/blog/basic-animated-jellyfish/</link>
+            <guid isPermaLink="true">
+                http://www.ruudbijnen.nl/blog/basic-animated-jellyfish/            </guid>
+            <pubDate>Tue, 24 Nov 2009 07:21:20 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Bézier Shape Editor/Animator]]></title>
+            <description><![CDATA[<p>While working on some program that renders creatures shapes using on bézier curves I found that it took quite some time to manual enter coordinate points, and this got even worse when I wanted to update the shape. So I decided to create a small openFrameworks based application to create and edit these shapes.</p>
+<p>
+[caption id="" align="alignnone" width="570" caption="Bézier Shape Editor/Animator screenshot"]<img title="Bézier Shape Editor/Animator screenshot" src="http://www.ruudbijnen.nl/wp-content/uploads/2009/11/BezierShapeEditor01.png" alt="Bézier Shape Editor/Animator screenshot" width="570" height="434" />[/caption]</p>
+<p>The ofxXmlSettings addon (that comes with the <a title="Download openFrameworks" href="http://www.openframeworks.cc/download" target="_blank">openFrameworks 'FAT' version</a>) looked like the perfect candidate to use in order to import/export the created shapes from this app to the one using these shapes. Guided by the example code that comes with the OF download it was a breeze to implement this feature.</p>
+<p>Creating this program was also a nice opportunity to give the <a title="ofxmsaof at Google Code" href="http://code.google.com/p/ofxmsaof/" target="_blank">ofxSimpleGuiToo addon</a> a try. With this addon it's very easy to get a GUI up and running quickly. You can save it's settings to a xml, that will be used to restore your settings on the (re)start of your program. This is a nice feature but not that important for this particular program. One thing I found to be quit frustrating though, was that I wasn't able to access the GUI object as I wanted. I would have liked to remove the top 'page' with the buttons (not in the screenshot above), because it will probably cause some confusion. Also, the way that buttons and other GUI elements work was a bit strange to me. The all work by changing the value of a referenced variable, where you would maybe expect some type of event handler instead.</p>
+<p>Everything in the this addon is coded nicely Object Orientated (as far as I can tell), so you would maybe expect it were a bit simpler to change the way ofxSimpleGuiToo works. The main reason I didn't succeed in getting the GUI the way I wanted it to be, was because the lack of good documentation. In my experience this (the lack of good/proper documentation) applies to almost everything that has to do with openFrameworks, and this is a real shame!</p>
+<p>Coding this program also introduced me to some maths I wasn't familiar with. Although not really important, I found it would be quit useful and user friendly if adding a new point to the shape was done instinctively. To me this means double clicking on the line should result in an extra point on that particular spot. Adding a point based on these coordinates is of course not a big deal, but figuring out where to place its handles in order to keep its shape was bit of a mystery to me. Luckily Google helped me out with some results about Bézier Curves. On <a href="http://www.cubic.org/docs/bezier.htm">http://www.cubic.org/docs/bezier.htm</a> there's some short but clear info about how to calculate a point on a bézier curve, including some example code written in C.</p>
+<p>'Animating' a created shape is also possible. All you have to do is to create a second shape, with exactly the same number of points (which is done by the software), that differs from the first shape and it will automatically morph between the first and second shape. By displaying the Animation GUI (press 2) you can control the the animation options. Unfortunately the animation part isn't as advanced as I wanted it to be, it's actually not even close. But I had to stop working on this, it was supposed to be a quick development of a helper tool, not a taking-way-to-long, full-blown application.</p>
+<p>For those interested, here you can download the <a title="Bezier Shape Editor Source Code" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/bezierShapeEditor1_src.rar">source code</a>, as well as the <a title="Bezier Shape Editor" href="http://lab.ruudbijnen.nl/~ruud/BlogContent/bezierShapeEditor1.rar">application (win32)</a>, but keep it mind this is far from finished.</p>]]></description>
+            <link>http://www.ruudbijnen.nl/blog/bezier-shape-editor-animator/</link>
+            <guid isPermaLink="true">
+                http://www.ruudbijnen.nl/blog/bezier-shape-editor-animator/            </guid>
+            <pubDate>Sat, 14 Nov 2009 23:25:03 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Inverse Kinematics using the ofxVectorMath addon]]></title>
+            <description><![CDATA[<p>In this small demo I've made a 'tentacle' object that uses inverse kinematics. For me this was a way to get a better understanding of the princeples of kinematics and learn more about the ofxVectorMath addon. You can drag your mouse, and the tentacle fill follow.</p>
+<p><img class="alignnone" title="Tentacle" src="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/tentacleDebugTest1_1.png" alt="" width="570" height="320" /></p>
+<p>Each segment will try to rotate towards the end of the previous one (or the mouse pointer in case of the fisrt segment). If it's out of reach, the segment will move to connect to that point.</p>
+<p>This for sure isn't groundbreaking stuff, but if you like, you can download the <a href="http://bl-tyrone.student.utwente.nl/~RuudBijnen/BlogContent/tentacleDebugTest1.rar">program and source code</a>.</p>]]></description>
+            <link>http://www.ruudbijnen.nl/blog/inverse-kinematics-using-the-ofxvectormath-addon/</link>
+            <guid isPermaLink="true">
+                http://www.ruudbijnen.nl/blog/inverse-kinematics-using-the-ofxvectormath-addon/            </guid>
+            <pubDate>Sat, 14 Nov 2009 15:13:46 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
