@@ -129,7 +129,7 @@
 		<section class="blog-content" itemprop="articleBody">
 			<p>While working on some program that renders creatures shapes using on bézier curves I found that it took quite some time to manual enter coordinate points, and this got even worse when I wanted to update the shape. So I decided to create a small openFrameworks based application to create and edit these shapes.</p>
 <p>
-[caption id="" align="alignnone" width="570" caption="Bézier Shape Editor/Animator screenshot"]<img title="Bézier Shape Editor/Animator screenshot" src="http://www.ruudbijnen.nl/wp-content/uploads/2009/11/BezierShapeEditor01.png" alt="Bézier Shape Editor/Animator screenshot" width="570" height="434" />[/caption]</p>
+<img class="img-responsive" title="Bézier Shape Editor/Animator screenshot" src="/blog/bezier-shape-editor-animator/BezierShapeEditor01.png" alt="Bézier Shape Editor/Animator screenshot" width="570" height="434" /></p>
 <p>The ofxXmlSettings addon (that comes with the <a title="Download openFrameworks" href="http://www.openframeworks.cc/download" target="_blank">openFrameworks 'FAT' version</a>) looked like the perfect candidate to use in order to import/export the created shapes from this app to the one using these shapes. Guided by the example code that comes with the OF download it was a breeze to implement this feature.</p>
 <p>Creating this program was also a nice opportunity to give the <a title="ofxmsaof at Google Code" href="http://code.google.com/p/ofxmsaof/" target="_blank">ofxSimpleGuiToo addon</a> a try. With this addon it's very easy to get a GUI up and running quickly. You can save it's settings to a xml, that will be used to restore your settings on the (re)start of your program. This is a nice feature but not that important for this particular program. One thing I found to be quit frustrating though, was that I wasn't able to access the GUI object as I wanted. I would have liked to remove the top 'page' with the buttons (not in the screenshot above), because it will probably cause some confusion. Also, the way that buttons and other GUI elements work was a bit strange to me. The all work by changing the value of a referenced variable, where you would maybe expect some type of event handler instead.</p>
 <p>Everything in the this addon is coded nicely Object Orientated (as far as I can tell), so you would maybe expect it were a bit simpler to change the way ofxSimpleGuiToo works. The main reason I didn't succeed in getting the GUI the way I wanted it to be, was because the lack of good documentation. In my experience this (the lack of good/proper documentation) applies to almost everything that has to do with openFrameworks, and this is a real shame!</p>
@@ -139,7 +139,7 @@
 		</section>
 	</div>
 
-	
+	<section itemscope="itemscope" itemtype="http://schema.org/associatedMedia" class="images"><div class="container"><header><h3>Gallery</h3></header><div class="gallery-list row"><div class="col-xs-6 col-sm-4 col-md-2"><a href="/blog/bezier-shape-editor-animator/BezierShapeEditor01.png" itemprop="url" class="thumbnail"><img src="/blog\bezier-shape-editor-animator/BezierShapeEditor01.thumb_zoomcrop_w460h360q100.png" itemprop="thumbnailUrl"/></a></div><div class="col-xs-6 col-sm-4 col-md-2"><a href="/blog/bezier-shape-editor-animator/BezierShapeEditor02_1280x720.png" itemprop="url" class="thumbnail"><img src="/blog\bezier-shape-editor-animator/BezierShapeEditor02_1280x720.thumb_zoomcrop_w460h360q100.png" itemprop="thumbnailUrl"/></a></div></div></div></section>
 
 	<nav class="nav-article">
 		<div class="container">
@@ -178,15 +178,6 @@
 			
 				<li class="list-documents-item blog-post">
 					<span class="badge document-type">blog-post</span>
-					<a href="/blog/bouncy-balls-with-momentum/" class="full-article">Bouncy Balls with Momentum</a>
-					<span class="tags">
-						
-						<em>openFrameworks</em>, collision-detection
-					</span>
-				</li>
-			
-				<li class="list-documents-item blog-post">
-					<span class="badge document-type">blog-post</span>
 					<a href="/blog/inverse-kinematics-using-the-ofxvectormath-addon/" class="full-article">Inverse Kinematics using the ofxVectorMath addon</a>
 					<span class="tags">
 						
@@ -196,10 +187,10 @@
 			
 				<li class="list-documents-item blog-post">
 					<span class="badge document-type">blog-post</span>
-					<a href="/blog/les-memoires/" class="full-article">Les Mémoires – Memories of past time</a>
+					<a href="/blog/bouncy-balls-with-momentum/" class="full-article">Bouncy Balls with Momentum</a>
 					<span class="tags">
 						
-						Les Mémoires, <em>openFrameworks</em>, Write-Up
+						<em>openFrameworks</em>, collision-detection
 					</span>
 				</li>
 			
@@ -209,6 +200,15 @@
 					<span class="tags">
 						
 						<em>openFrameworks</em>, cinder
+					</span>
+				</li>
+			
+				<li class="list-documents-item blog-post">
+					<span class="badge document-type">blog-post</span>
+					<a href="/blog/les-memoires/" class="full-article">Les Mémoires – Memories of past time</a>
+					<span class="tags">
+						
+						Les Mémoires, <em>openFrameworks</em>, Write-Up
 					</span>
 				</li>
 			
